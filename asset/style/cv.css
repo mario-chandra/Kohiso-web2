@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+body {
+    background: #222222;
+    font-family: 'Raleway'
+}
+.background {
+    background: #222222;
+}
+.row .col {
+    padding: 0;
+}
+.side-btn {
+    padding-top: 1rem;
+    font-size: 3rem;
+    height: 90px;
+    background-color: #81B71A;
+    text-align: center;
+}
+.side-btn:hover {
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+.img-container,.img-text {
+    position: relative;
+}
+img.img-overlay,div.img-overlay {
+    position: absolute;
+}
+img.img-overlay{
+    object-fit: cover;
+    height: 100vh;
+}
+.img-overlay {
+    width: 643px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(22, 21, 21, 0) 0%, #000000 86.98%);
+    opacity: 0.8;
+    
+}
+div.img-text {
+    top: 500px;
+    text-align: center;
+    bottom: 0;
+    font-size: 1.8rem;
+    color: #FFF8DF;
+}
+p.img-text {
+    color: #81B71A;
+}
+h1.img-text {
+    font-size: 4rem;  
+}
+h1.about-me,p.about-me {
+    color: #FFF8DF;
+}
+a.img-text {
+    color: #FFF8DF;
+    margin-right: 1.5rem;
+}
+a.img-text:hover{
+    transition-duration: 0.3s;
+    opacity: 0.5;
+}
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+.row.skill{
+    margin-bottom: 4rem;
+}
+div.about-me {
+    padding: 2rem!important;
+    color : #81B71A;
+}
+
+.sub-strip {
+    margin: 0 1rem;
+}

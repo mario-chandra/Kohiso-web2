@@ -1,0 +1,424 @@
+:root {
+    --cream1: #F2E1D9;
+    --cream2: #F4E1DB;
+    --purple: #60184C;
+    --brown: #C4A099;
+    --light: #FFF8DF;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../font/Raleway-Regular.ttf')
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.head-img img {
+    width: 100%;
+}
+
+body {
+    color: var(--light);
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background: #1A181B;
+}
+
+.kohiso-btn {
+    border-radius: 58px;
+    background-color: var(--light);
+    color: var(--purple);
+}
+
+.kohiso-btn:hover {
+    background-color: var(--brown);
+    transition-duration: 0.5s;
+}
+
+.purple-bg {
+    background-color: var(--purple);
+    color: var(--light);
+}
+
+.nav-link {
+    color: var(--light)
+}
+
+img {
+    width: 100%;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+.container-img,
+.container-main,
+.container-img-no-overlay {
+    position: absolute
+}
+
+.container-img {
+    opacity: 0.5;
+}
+
+.container-main {
+    width: 100%;
+    padding: 2rem 1rem;
+    height: 100%;
+}
+
+.head-container,
+.reward-container,
+.product-container,
+.us-container,
+.story-container {
+    position: relative;
+}
+
+.head-container {
+    height: 495px;
+}
+
+.head-title {
+    font-size: 3rem;
+    margin: 7rem auto;
+    text-align: center;
+}
+
+.head-title h1 {
+    font-size: 5rem;
+}
+
+.reward-container {
+    height: 595px;
+}
+
+.reward {
+    margin: 15rem 0 0 10rem;
+}
+
+.container-img.product {
+    display: flex;
+}
+
+.img-hover {
+    transition-duration: 1s;
+    opacity: 0.1;
+}
+
+.container-img.product img {
+    width: 50%;
+}
+
+.row.product {
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.btn-see {
+    color: var(--light);
+    border: 1px solid #FFF8DF;
+    box-sizing: border-box;
+    border-radius: 28px;
+}
+
+.product-container {
+    height: 495px;
+}
+
+.us-container {
+    font-size: 2rem;
+    text-align: center;
+    height: 792px;
+}
+
+.container-main.us {
+    margin-top: 15rem;
+}
+
+h1.us {
+    font-size: 3rem;
+}
+
+p.us {
+    margin: auto;
+    width: 50%;
+}
+
+a.us {
+    font-size: 2rem;
+}
+
+.footer {
+    padding: 3rem 8rem 1rem 8rem;
+    background-color: #E5E5E5;
+    color: var(--purple);
+}
+
+.row.footer {
+    width: 100%;
+}
+
+.footer-link {
+    color: var(--purple);
+    display: table;
+    margin-bottom: .5rem;
+}
+
+.form-control {
+    background: #C4C4C4;
+    border-radius: 8px;
+}
+
+.product-view {
+    padding: 2rem;
+    background-color: var(--cream1);
+}
+
+.product.card {
+    width: 300px;
+    height: 380px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    background: var(--cream1);
+}
+
+#product {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.re-btn {
+    width: 141px;
+    height: 49px;
+}
+
+.product-detail {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background: #7A4F47;
+    opacity: 0.6;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    bottom: 0;
+}
+
+.product-img {
+    position: absolute;
+}
+
+.container-us {
+    background-color: white;
+    color: black;
+}
+
+.us-main {
+    text-align: center;
+}
+
+h1.us-main {
+    margin-top: 15rem;
+}
+
+p.us-main {
+    margin: auto;
+    width: 50%;
+}
+
+.us-img {
+    padding: 0 !important;
+}
+
+.us-tab {
+    text-align: center;
+    color: var(--light);
+    background-color: var(--purple);
+    padding: 1rem;
+}
+
+.press {
+    padding: 2rem;
+    background-color: var(--cream1);
+}
+
+.product-promo {
+    text-decoration: line-through;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.text-purple {
+    color: var(--purple)
+}
+
+.press-img {
+    position: relative;
+}
+
+img.press-img,
+.press-overlay,
+.press-main {
+    width: 390px;
+    height: 270px;
+    position: absolute;
+}
+
+.press-overlay {
+    background: #7A4F47;
+    opacity: 0.5;
+}
+
+h1.press-main {
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.press-item {
+    margin: 2rem auto;
+    width: 390px;
+    height: 270px;
+}
+
+.press.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-title {
+    padding-top: 10rem !important;
+}
+
+.contact-us {
+    background-color: var(--cream1);
+    color: black;
+    padding: 2rem;
+}
+
+.form-control.contact-us {
+    background-color: var(--light);
+    border-radius: 5px;
+    padding: 0;
+}
+
+.dropdown-divider.contact-us {
+    border-top: 0.5px solid #1A181B;
+    padding: 1rem;
+}
+
+.sub-btn {
+    width: 120px;
+    height: 60px;
+    background-color: var(--purple);
+    border-radius: 3px;
+    color: var(--light)
+}
+
+.x-btn {
+    width: 120px;
+    height: 60px;
+    border: 1px solid #60184C;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.contact-info {
+    border-radius: 13px;
+    width: 500px;
+    height: 300px;
+    background-color: var(--purple);
+    color: var(--light);
+    text-align: center;
+    margin-left: auto;
+    font-size: 1.5rem;
+    padding-top: 3rem;
+    margin-top: 5rem;
+}
+
+.show-detail {
+    height: 100%;
+    padding-top: 5rem;
+    background: rgb(196, 153, 153);
+    background: linear-gradient(357deg, rgba(196, 153, 153, 0.6979166666666667) 0%, rgba(196, 153, 153, 0.3337710084033614) 100%);
+    transition-duration: 1s;
+}
+
+.see-more {
+    color: var(--brown);
+}
+
+.see-more:hover {
+    color: var(--purple);
+}
+
+.egift-container {
+    background-color: var(--cream1);
+    margin-bottom: -2rem;
+    padding-bottom: 2.3rem;
+    padding-top: 5rem;
+}
+
+.egift-pat {
+    background: var(--purple);
+    height: 250px;
+}
+
+.container.egift {
+    margin-top: -13rem;
+}
+
+.carousel {
+    margin: auto;
+    width: 402px;
+    height: 244px;
+}
+
+.carousel-inner {
+    height: 100%
+}
+
+.egift div {
+    font-weight: bold;
+    color: black;
+}
+textarea {
+    background-color: var(--light)!important;
+}
+.egift div input {
+    margin-bottom: 1rem;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--light);
+}
+.egi-btn {
+    width: 100%;
+    background-color: var(--purple);
+    color: var(--light);
+}
+.btn-amount,.btn-amount.active:hover {
+    padding: 1rem 2rem;
+    background-color: var(--light);
+    color: black;
+}
+.btn-amount:hover,.btn-amount.active {
+    background-color: black;
+    color: var(--light);
+}
