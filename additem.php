@@ -1,26 +1,5 @@
 <?php
-  $conn = mysqli_connect("localhost","root","","kohiso");
-  var_dump($_POST);
-
-  if(isset($_POST["submit"])){
-
-    $name = $_POST["name"];
-    $deskripsi = $_POST["deskripsi"];
-    $harga = $_POST["harga"];
-
-    $query = "INSERT INTO item
-    VALUES (
-      '$name' , '$deskripsi' , '$harga'
-    ) ";
-
-    mysqli_query($conn,$query);
-
-    $check = mysqli_affected_rows($conn);
-    
-
-  }
-
-
+  require 'functions.php';
  ?>
 
  <!DOCTYPE html>
@@ -46,10 +25,10 @@
 
      <?php
      if(isset($_POST["submit"])):
-       if ($check > 0) :
-         echo "<p>berhasil</p>";
+       if(addItem($_POST)>0):
+         echo "berhasil";
        else :
-         echo "<p>gagal</p>";
+         echo "gagal";
        endif;
      endif;
       ?>
