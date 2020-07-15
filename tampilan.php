@@ -44,7 +44,7 @@
         <td><?= $i; ?></td>
         <td>
           <a href="#">ubah</a>
-          <a href="#">hapus</a>
+          <a href="hapusitem.php?name=<?= $item['name'] ?>">hapus</a>
         </td>
         <?= "<td>".$item['name']."</td>" ?>
         <?= "<td>".$item['harga']."</td>" ?>

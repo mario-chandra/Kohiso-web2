@@ -30,4 +30,11 @@
     return $datas;
   }
 
+  function deleteData($data){
+   global $conn;
+   mysqli_query($conn,"DELETE FROM item WHERE name = '$data'");
+   return mysqli_affected_rows($conn);
+ }
+
+
  ?>
