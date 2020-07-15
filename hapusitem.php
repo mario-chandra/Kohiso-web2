@@ -1,7 +1,7 @@
 <?php
 
   require 'functions.php';
-  $name = $_GET["name"];
+  $name = $_GET["id"];
 
   if(deleteData($name) > 0 ){
     echo "
