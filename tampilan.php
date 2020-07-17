@@ -32,8 +32,10 @@
 
     <table border="1" cellpadding = "10" cellspacing = "0" >
       <tr>
+
         <th>no</th>
         <th>pengaturan</th>
+        <th>id</th>
         <th>nama</th>
         <th>harga</th>
         <th>deskripsi</th>
@@ -43,9 +45,10 @@
 
         <td><?= $i; ?></td>
         <td>
-          <a href="#">ubah</a>
-          <a href="#">hapus</a>
+          <a href="gantiitem.php?id=<?= $item['id'] ?>">edit</a>
+          <a href="hapusitem.php?id=<?= $item['id'] ?>">hapus</a>
         </td>
+        <?= "<td>".$item['id']."</td>" ?>
         <?= "<td>".$item['name']."</td>" ?>
         <?= "<td>".$item['harga']."</td>" ?>
         <?= "<td>".$item['deskripsi']."</td>" ?>
