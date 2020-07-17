@@ -55,4 +55,25 @@
     return mysqli_affected_rows($conn);
   }
 
+  function addAccount($data){
+
+    global $conn;
+    $firstName = $data["firstName"];
+    $lastName = $data["lastName"];
+    $phoneNum = $data["phoneNum"];
+    $gender = $data["gender"];
+    $username = $data["username"];
+    $address = $data["address"];
+    $password = $data["password"];
+
+
+    $query = "INSERT INTO account
+    VALUES (
+     '',  '$firstName' , '$lastName' , '$phoneNum' , '$gender' , '$username' , '$address' , '$password'
+    ) ";
+
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+  }
  ?>

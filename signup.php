@@ -1,23 +1,6 @@
 <?php
-
-if (isset($_POST["submit"])) {
-
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-  $cpassword = $_POST["cpassword"];
-
-  $conn = mysqli_connect("localhost","root","","kohiso");
- // $query = "INSERT INTO user
- //VALUES
-  //        ('$rname','$name','$remail','$email',' ','$message')
-  //";
-
-  mysqli_query($conn,$query);
-  $error = mysqli_error($conn);
-  $test = mysqli_affected_rows($conn);
-
-  echo "$error";
-}
+  var_dump($_POST);
+  require 'functions.php';
  ?>
 
 <html>
@@ -115,54 +98,69 @@ if (isset($_POST["submit"])) {
 	                	<div class="row">
 	                		<div class="col">
 	                			<label>FIRST NAME</label>
-	                    		<input class="form-control" name="fname">
+	                    		<input class="form-control" name="firstName" required>
 	                		</div>
 	                		<div class="col">
 	                			<label>LAST NAME</label>
-	                    		<input class="form-control" name="lname">
+	                    		<input class="form-control" name="lastName" required>
 	                		</div>
 	                	</div>
 	                	<br>
 	                	<div class="row">
 	                		<div class="col">
 	                			<label>PHONE NUMBER</label>
-	                    		<input class="form-control" name="hp">
+	                    		<input class="form-control" name="phoneNum" required>
 	                		</div>
 	                		<div class="col">
 	                			<label>GENDER</label>
 	                   			<select class="form-control" name="gender">
-								    <option>Male</option>
-								    <option>Female</option>
-								    <option>Custom</option>
-								</select>
+          								    <option>Male</option>
+          								    <option>Female</option>
+          								    <option>Custom</option>
+          								</select>
 	                		</div>
 	                	</div>
 	                	<br>
 	                    <label>USERNAME/EMAIL</label>
-	                    <input class="form-control" type="email" name="username">
+	                    <input class="form-control" type="email" name="username" required>
 	                    <br>
 	                    <label>ADDRESS</label>
-	                    <input class="form-control" name="address">
+	                    <input class="form-control" name="address" required>
 	                    <br>
 	                    <div class="row">
 	                		<div class="col">
 	                			<label>PASSWORD</label>
-	                    		<input class="form-control" name="password">
+	                    		<input type="password" class="form-control" name="password" required>
 	                		</div>
 	                		<div class="col">
 	                			<label>CONFIRM PASSWORD</label>
-	                   			<input class="form-control" name="cpassword">
+	                   			<input type="password" class="form-control" name="cpassword" required>
 	                		</div>
 	                	</div>
-	                    
+
 	                    <br>
-	                    
+
 	                </div>
 	                <div class="col-3"> </div>
             	</div>
             	<br>
-                <div class="w-100 text-center"><button class="btn kohiso-btn egi-btn" type="submit" name="signup">SIGN UP</button></div>
+                <div class="w-100 text-center"><button class="btn kohiso-btn egi-btn" type="submit" name="submit">SIGN UP</button></div>
             </form>
+            <?php
+            if(isset($_POST["submit"])){
+              if ($_POST["password"] == $_POST["cpassword"]) {
+                if (addAccount($_POST)>0) {
+                  echo "berhasil";
+                }else {
+                  echo "gagal";
+                }
+              }else {
+                echo "password tidak sesuai";
+              }
+            }
+
+
+             ?>
         </div>
 
     </div>
