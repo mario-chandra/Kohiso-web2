@@ -1,22 +1,27 @@
 <?php
 
-if (isset($_POST["submit"])) {
+  session_start();
 
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+  require 'functions.php';
 
-  $conn = mysqli_connect("localhost","root","","kohiso");
- // $query = "INSERT INTO user
- //VALUES
-  //        ('$rname','$name','$remail','$email',' ','$message')
-  //";
 
-  mysqli_query($conn,$query);
-  $error = mysqli_error($conn);
-  $test = mysqli_affected_rows($conn);
+  if (isset($_POST["submit"])) {
 
-  echo "$error";
-}
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $result = mysqli_query($conn,"SELECT * FROM account WHERE username = '$username'");
+    if (mysqli_num_rows($result) === 1) {
+      $row = mysqli_fetch_assoc($result);
+
+      if ($password == $row["Password"]) {
+        $_SESSION["signin"] = true;
+        header("location:index.html");
+        exit;
+      }
+    }
+    $error = true;
+  }
  ?>
 
 <html>
@@ -112,17 +117,22 @@ if (isset($_POST["submit"])) {
             		<div class="col-3"> </div>
 	                <div class="col-6">
 	                	<br>
-	                    <label>USERNAME</label>
-	                    <input class="form-control" name="username">
+	                    <label for="username">USERNAME</label>
+	                    <input class="form-control" name="username" required>
 	                    <br>
-	                    <label>PASSWORD</label>
-	                    <input class="form-control" name="password">
+	                    <label for="password">PASSWORD</label>
+	                    <input type="password" class="form-control" name="password" required>
 	                </div>
 	                <div class="col-3"> </div>
             	</div>
             	<br>
-                <button class="btn kohiso-btn egi-btn" type="submit" name="signin">SIGN IN</button>
+                <button class="btn kohiso-btn egi-btn" type="submit" name="submit">SIGN IN</button>
             </form>
+
+            <?php if (isset($error)): ?>
+              <p style="color:red">username atau password salah</p>
+            <?php endif; ?>
+
         </div>
 
     </div>
