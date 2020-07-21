@@ -67,16 +67,25 @@ $items = fetchData("SELECT * FROM item");
             <div id="product">
 
               <?php foreach ($items as $item): ?>
-                <div class="product card mx-3 my-3">
-                    <img src='asset/img/product.png' class='product-img' height="100%">
-                    <div class="product-detail">
-                        <h3><?= $item["name"] ?></h3>
-                        <p class="mt-2">Rp.<?= $item["harga"] ?></p>
-                        <small><?= $item["deskripsi"] ?></small>
-                    </div>
-                </div>
+                <form action="addcart.php" method="post">
+                  <div class="product card mx-3 my-3">
+                      <img src='asset/img/product.png' class='product-img' height="100%">
+                      <div class="product-detail">
+                          <h3><?= $item["name"] ?></h3>
+                          <p class="mt-2">Rp.<?= $item["harga"] ?></p>
+                          <small><?= $item["deskripsi"] ?></small>
+                          <input type="hidden" name="name" value="<?= $item["name"] ?>">
+                          <input type="hidden" name="harga" value="<?= $item["harga"] ?>">
+                          <button type="submit" name="addtocart">add to cart</button>
+                      </div>
+                  </div>
+                </form>
               <?php endforeach; ?>
 
+
+          <?php
+
+           ?>
         </div>
     </div>
 

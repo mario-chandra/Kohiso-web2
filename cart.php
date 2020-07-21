@@ -1,28 +1,17 @@
 <?php
-
   session_start();
+  $username = $_SESSION["username"];
 
-  require 'functions.php';
+  if (!isset($_SESSION["signin"])) {
+    header("Location: signin.php");
+  }else {
+    require 'functions.php';
 
-
-  if (isset($_POST["submit"])) {
-
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $result = mysqli_query($conn,"SELECT * FROM account WHERE username = '$username'");
-    if (mysqli_num_rows($result) === 1) {
-      $row = mysqli_fetch_assoc($result);
-
-      if ($password == $row["Password"]) {
-        $_SESSION["signin"] = true;
-        $_SESSION["username"] = $_POST["username"];
-        header("location:index.html");
-        exit;
-      }
-    }
-    $error = true;
+    $items = fetchData("SELECT * FROM cart WHERE username = '$username'  ");
   }
+
+
+  $totalHarga = 0;
  ?>
 
 <html>
@@ -35,9 +24,9 @@
 </head>
 
 <body>
-    <div class="head-container">
+    <div class="head-container" style="height: 60%">
         <div class="container-img">
-            <img src="asset/img/head.png">
+            <img src="asset/img/cart.png">
         </div>
         <div class='container-main'>
             <nav class="navbar navbar-expand-lg">
@@ -67,76 +56,62 @@
                         <li class="nav-item">
                             <a class="nav-link color-light" href="register">JOIN NOW</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-light" href="logout.php">LOG OUT</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
 
-            <div class="head-title">
-                <h1>EGIFT CARDS</h1>
+
+            <div class="head-title fade-in-section" style="margin-top: 1rem">
+                <h1>Cart</h1>
             </div>
 
         </div>
     </div>
 
-    <div class="egift-container">
-        <div class="egift-pat">
 
-        </div>
+	<div class="cart-container row m-0" style="color: black">
+		<div class="col-8">
 
-        <div class="container egift">
-            <h1 class="text-center">Give The Perfect Gift</h1>
-            <h3 class="text-center mb-3">Send gift instantly and choose amount</h3>
-            <div id="carouselExampleSlidesOnly mb-5" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="asset/img/about%20(1).png" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="asset/img/about%20(2).png" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="asset/img/about%20(3).png" alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+      <?php foreach ($items as $item): ?>
+        <div class="row pb-3 border-bottom">
+  				<div class="col-3">
+  					<img src="asset/img/prd-img.png" class="w-100">
+  				</div>
+  				<div class="col-9">
+  					<h3><?= $item["nama"] ?></h3>
+  					<p>Price: <?= $item["harga"] ?></p>
+  				</div>
+          <a href="deleteCartItem.php?id=<?= $item['id'] ?>">delete</a>
+  			</div>
+        <?php
+          $hargastr = $item["harga"];
+          $hargaint = (int)$hargastr;
+          $totalHarga = $totalHarga + $hargaint;
+         ?>
+      <?php endforeach; ?>
 
-            <form class="egift text-center" method="post">
-            	<div class="row">
-            		<div class="col-3"> </div>
-	                <div class="col-6">
-	                	<br>
-	                    <label for="username">USERNAME</label>
-	                    <input class="form-control" name="username" required>
-	                    <br>
-	                    <label for="password">PASSWORD</label>
-	                    <input type="password" class="form-control" name="password" required>
-	                </div>
-	                <div class="col-3"> </div>
-            	</div>
-            	<br>
-                <button class="btn kohiso-btn egi-btn" type="submit" name="submit">SIGN IN</button>
-            </form>
 
-            <?php if (isset($error)): ?>
-              <p style="color:red">username atau password salah</p>
-            <?php endif; ?>
 
-        </div>
 
-    </div>
+
+		</div>
+		<div class="col-4 p-3">
+			<div class="border rounded shadow-sm" style="padding: 2rem">
+				<h5><strong>Order Summar</strong></h5>
+				<div class="d-flex justify-content-between border-bottom pb-2">
+					<div>Sub Total</div>
+					<div><strong>Rp. <?= $totalHarga ?></strong></div>
+				</div>
+				<button type="button" class="btn btn-danger w-100 mt-2">CHECK OUT</button>
+			</div>
+		</div>
+
+
+	</div>
+
 
     <div class="footer">
         <div class="row footer">
