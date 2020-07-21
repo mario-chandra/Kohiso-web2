@@ -42,6 +42,12 @@
    return mysqli_affected_rows($conn);
  }
 
+ function deleteItemCart($data){
+   global $conn ;
+   mysqli_query($conn,"DELETE FROM cart WHERE id = '$data'");
+   return mysqli_affected_rows($conn);
+ }
+
   function updateData($data){
     global $conn;
     $id = $data["id"];
@@ -115,6 +121,23 @@
 
     return mysqli_affected_rows($conn);
 
+
+  }
+
+  function addCart($data,$data2){
+    global $conn ;
+
+    $username = $data2;
+    $name = $data["$name"];
+    $harga = $data["$harga"];
+
+    $query = "INSERT INTO cart
+    VALUES(
+      '', '$username' , '$nama' , '$harga'
+    )";
+
+    mysqli_query($conn,$query);
+    return mysql_affected_rows($conn);
 
   }
 

@@ -422,3 +422,9 @@ textarea {
     background-color: black;
     color: var(--light);
 }
+
+.cart-container{
+  background-color: white;
+  padding: 10%;
+  padding-top: 5%;
+}
