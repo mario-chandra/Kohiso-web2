@@ -36,6 +36,12 @@
    return mysqli_affected_rows($conn);
  }
 
+ function deleteAdmin($data){
+   global $conn ;
+   mysqli_query($conn,"DELETE FROM admin WHERE id = '$data'");
+   return mysqli_affected_rows($conn);
+ }
+
   function updateData($data){
     global $conn;
     $id = $data["id"];
@@ -53,6 +59,23 @@
     mysqli_query($conn,$query);
 
     return mysqli_affected_rows($conn);
+  }
+
+  function gantiAdmin($data){
+    global $conn;
+    $id = $data["id"];
+    $username = $data["username"];
+    $password = $data["password"];
+
+    $query = "UPDATE admin SET
+      username ='$username' ,
+      password = '$password'
+      WHERE id = $id";
+
+      mysqli_query($conn,$query);
+      return mysqli_affected_rows($conn);
+
+
   }
 
   function addAccount($data){
@@ -76,4 +99,24 @@
 
     return mysqli_affected_rows($conn);
   }
+
+  function addAdmin($data){
+    global $conn ;
+
+    $username = $data["username"];
+    $password = $data["password"];
+
+    $query = "INSERT INTO admin
+    VALUES(
+      '', '$username' , '$password'
+    )";
+
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+
+
+  }
+
+
  ?>
