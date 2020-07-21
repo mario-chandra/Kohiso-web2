@@ -1,3 +1,11 @@
+<?php
+
+require 'functions.php';
+
+$items = fetchData("SELECT * FROM item");
+
+ ?>
+
 <html>
 
 <head>
@@ -54,32 +62,25 @@
 
     <div class="product-view">
         <div class="container">
-            <h2 class='text-purple font-weight-bold'>OUR SPECIAL ITEM</h2>
-            <div id="product-promo">
-
-            </div>
 
             <h2 class='text-purple font-weight-bold'>OUR PRODUCT</h2>
             <div id="product">
 
-
-                <!--
-                    <div class="product card mx-3 my-3" style="">
-                        <img src='asset/img/product.png' class='product-img' height="100%">
-                        <div class="product-detail">
-                            <h3>Title</h3>
-                            <i class="fa fa-star ml-2"></i>
-                            <i class="fa fa-star ml-2"></i>
-                            <i class="fa fa-star ml-2"></i>
-                            <i class="fa fa-star ml-2"></i>
-                            <i class="fa fa-star ml-2"></i>
-                            <p class="mt-2">Price</p>
-                        </div>
+              <?php foreach ($items as $item): ?>
+                <div class="product card mx-3 my-3">
+                    <img src='asset/img/product.png' class='product-img' height="100%">
+                    <div class="product-detail">
+                        <h3><?= $item["name"] ?></h3>
+                        <p class="mt-2">Rp.<?= $item["harga"] ?></p>
+                        <small><?= $item["deskripsi"] ?></small>
                     </div>
--->
+                </div>
+              <?php endforeach; ?>
 
 
-            </div>
+
+
+
         </div>
     </div>
 

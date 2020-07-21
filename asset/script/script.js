@@ -12,19 +12,7 @@ async function getData() {
     $.get(url).then(res => {
         res.forEach(function (item) {
             $('#product').append(`
-            <div class="product card mx-3 my-3">
-                <img src='asset/img/product.png' class='product-img' height="100%">
-                <div class="product-detail">
-                    <h3>${item.nama_produk}</h3>
-                    <small>${item.short_desc}<small><br>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <p class="mt-2">Rp. ${item.price}</p>
-                </div>
-            </div>
+            
             `)
         })
         $('#product-promo').append(`
@@ -63,8 +51,8 @@ $('.head-title').addClass('is-visible')
 $(window).on("load",function() {
   $(window).scroll(function() {
     var windowBottom = $(this).scrollTop() + window.innerHeight;
-    $(".fade-in-section").each(function() {      
-      var objectBottom = $(this).offset().top 
+    $(".fade-in-section").each(function() {
+      var objectBottom = $(this).offset().top
       if (objectBottom < windowBottom) { //object comes into view (scrolling down)
         $(this).addClass('is-visible');
       }
@@ -77,6 +65,3 @@ $('.btn-amount').click(function(ev){
     $('.btn-amount.active').removeClass('active')
     $(this).addClass('active')
 })
-
-    
-    
