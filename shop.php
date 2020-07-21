@@ -77,10 +77,6 @@ $items = fetchData("SELECT * FROM item");
                 </div>
               <?php endforeach; ?>
 
-
-
-
-
         </div>
     </div>
 
