@@ -10,15 +10,19 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php#content1">Content1</a></li>
-                    <li><a href="home.php#content2">Content2</a></li>
-                    <li><a href="home.php#content3">Content3</a></li>
-                    <li><a href="home.php#content4">Content4</a></li>
-                    <li><a href="home.php#content5">Content5</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">LOGIN<span class="caret"></span></a>
+                      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="login.php">LOGIN</a></li>
-                            <li><a href="masterlogin.php">MASTER LOGIN</a></li>
+                             <li><a href="tampilan.php">Lihat Product</a></li>  
+                            <li><a href="additem.php">Add Product</a></li>
+                            <li><a href="hapusitem.php">Remove Product</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Akun<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                               <li><a href="adminuser.php">Lihat Admin</a></li>  
+                            <li><a href="addadmin.php">Add Admin</a></li>
+                              <li><a href="hapusadmin.php">Remove Admin</a></li>
+                            <li><a href="logoutadmin.php">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
