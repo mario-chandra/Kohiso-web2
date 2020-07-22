@@ -72,7 +72,7 @@ if(isset($_SESSION["data_admin"]))
                    <div class="form-group row"><!--start form-group-->
                         <label class="col-lg-3">Username </label>
                         <div class="col-lg-8 input-group input-group-sm"><span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                        <input id="user" type="text" name="username" placeholder="username" class="form-control" maxlength="40" value="<?php echo $_POST['username'];?>" autofocus>
+                        <input type="text" name="username" placeholder="username" class="form-control" maxlength="40" value="<?php echo $_POST['username'];?>" autofocus>
                         </div>
                    </div><!--/form-group-->
 
@@ -81,7 +81,7 @@ if(isset($_SESSION["data_admin"]))
                         <label class="col-lg-3">Password</label>
                         <div class="col-lg-8 input-group  input-group-sm">
                         <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
-                        <input id="pass" type="password" name="password" placeholder="Password" class="form-control" value="<?php echo $_POST['password'];?>" maxlength="15">
+                        <input id="pass1" type="password" name="password" placeholder="Password" class="form-control" value="<?php echo $_POST['password'];?>" maxlength="15">
                         </div>
                         </div><!--/form-group-->
                    <?php echo $er_pass;?>
