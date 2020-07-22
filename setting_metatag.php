@@ -26,3 +26,4 @@ include "security.php";
 </head>
 
 <body>
+    <div id="wrapper">

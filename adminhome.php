@@ -1,8 +1,7 @@
 <?php
-include "setting_metatag.php";
-include "setting_navbar.php";
+require "setting_metatag.php";
+require "setting_navbar.php";
 ?>
-
         <div id="page-wrapper">
 
             <div class="container">
