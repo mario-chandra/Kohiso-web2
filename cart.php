@@ -42,19 +42,19 @@
                             <a class="nav-link" href="index.html">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=shop.html>SHOP</a>
+                            <a class="nav-link" href=shop.php>SHOP</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="press.html">PRESS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gift.html">EGIFT CARDS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link color-light" href="sign">SIGN IN</a>
+                            <a class="nav-link" href="gift.php">EGIFT CARDS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link color-light" href="register">JOIN NOW</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-light" href="signin.php">SIGN IN</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link color-light" href="logout.php">LOG OUT</a>
@@ -75,41 +75,36 @@
 	<div class="cart-container row m-0" style="color: black">
 		<div class="col-8">
 
-      <?php foreach ($items as $item): ?>
-        <div class="row pb-3 border-bottom">
-  				<div class="col-3">
-  					<img src="asset/img/prd-img.png" class="w-100">
-  				</div>
-  				<div class="col-9">
-  					<h3><?= $item["nama"] ?></h3>
-  					<p>Price: <?= $item["harga"] ?></p>
-  				</div>
-          <a href="deleteCartItem.php?id=<?= $item['id'] ?>">delete</a>
-  			</div>
-        <?php
-          $hargastr = $item["harga"];
-          $hargaint = (int)$hargastr;
-          $totalHarga = $totalHarga + $hargaint;
-         ?>
-      <?php endforeach; ?>
+          <?php foreach ($items as $item): ?>
 
-
-
-
+            <div class="row pb-3 m-0 border-bottom">
+      			<div class="col-3 p-0">
+      				<img src="asset/img/prd-img.png" class="w-100">
+      			</div>
+    			<div class="col-9" style="padding: 0; padding-left: 2rem">
+          			<h3><?= $item["nama"] ?></h3>
+          			<p>Price: <?= $item["harga"] ?></p>
+                    <a href="deleteCartItem.php?id=<?= $item['id'] ?>"><img src="asset/img/trash.png" style="width: 5%; position: absolute; bottom: 1rem; right: 1rem"></a>
+    			</div>
+            </div>
+            <?php
+              $hargastr = $item["harga"];
+              $hargaint = (int)$hargastr;
+              $totalHarga = $totalHarga + $hargaint;
+            ?>
+          <?php endforeach; ?>
 
 		</div>
-		<div class="col-4 p-3">
-			<div class="border rounded shadow-sm" style="padding: 2rem">
-				<h5><strong>Order Summar</strong></h5>
-				<div class="d-flex justify-content-between border-bottom pb-2">
-					<div>Sub Total</div>
-					<div><strong>Rp. <?= $totalHarga ?></strong></div>
-				</div>
-				<button type="button" class="btn btn-danger w-100 mt-2">CHECK OUT</button>
-			</div>
-		</div>
-
-
+        <div class="col-4 p-3 px-4">
+            <div class="border rounded shadow-sm" style="padding: 2rem">
+                <h5><strong>Order Summar</strong></h5>
+                <div class="d-flex justify-content-between border-bottom pb-2">
+                    <div>Sub Total</div>
+                    <div><strong>Rp. <?= $totalHarga ?></strong></div>
+                </div>
+                <button type="button" class="btn btn-danger w-100 mt-2">CHECK OUT</button>
+            </div>
+        </div>
 	</div>
 
 

@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <html>
 
 <head>
@@ -23,20 +26,27 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">HOME</a>
+                            <a class="nav-link" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=shop.html>SHOP</a>
+                            <a class="nav-link" href=shop.php>SHOP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="press.html">PRESS</a>
+                            <a class="nav-link" href="press.php">PRESS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gift.html">EGIFT CARDS</a>
+                            <a class="nav-link" href="gift.php">EGIFT CARDS</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link color-light" href="sign">SIGN IN</a>
-                        </li>
+                        <?php if (!isset($_SESSION["signin"])): ?>
+                          <li class="nav-item">
+                              <a class="nav-link color-light" href="signin.php">SIGN ssIN</a>
+                          </li>
+                        <?php else: ?>
+                          <li class="nav-item">
+                              <a class="nav-link color-light" href="logout.php">LOG OUT</a>
+                          </li>
+                        <?php endif; ?>
+
                         <li class="nav-item">
                             <a class="nav-link color-light" href="register">JOIN NOW</a>
                         </li>
