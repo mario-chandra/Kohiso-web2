@@ -4,7 +4,9 @@
 
   require 'functions.php';
 
-
+  if (isset($_SESSION["signin"])) {
+    header("Location:index.php");
+  }
   if (isset($_POST["submit"])) {
 
     $username = $_POST["username"];
@@ -17,7 +19,7 @@
       if ($password == $row["Password"]) {
         $_SESSION["signin"] = true;
         $_SESSION["username"] = $_POST["username"];
-        header("location:index.html");
+        header("location:index.php");
         exit;
       }
     }
