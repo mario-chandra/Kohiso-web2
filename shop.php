@@ -86,7 +86,7 @@ $items = fetchData("SELECT * FROM item");
                           <small><?= $item["deskripsi"] ?></small>
                           <input type="hidden" name="name" value="<?= $item["name"] ?>">
                           <input type="hidden" name="harga" value="<?= $item["harga"] ?>">
-                          <button type="submit" name="addtocart">add to cart</button>
+                          <button type="submit" name="addtocart" class="btn btn-sm rounded-pill btn-info">add to cart</button>
                       </div>
                   </div>
                 </form>
