@@ -63,7 +63,7 @@
             <li class="dropdown">
                 <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $admin['nama_admin'];?><span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="logoutadmin.php">Logout</a></li>
 
                 </ul>
             </li>

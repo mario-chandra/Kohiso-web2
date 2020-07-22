@@ -25,7 +25,7 @@ if(isset($_SESSION["data_admin"]))
     <strong>Password Kosong !</strong> <br> Password Wajib diisi</div>";
     }
     else{
-    $sql_cek=mysqli_query($conect, "SELECT * FROM admin where username='$user' and password='$pass_md5'");
+    $sql_cek=mysqli_query($conn, "SELECT * FROM admin where username='$user' and password='$pass_md5'");
     $cek_admin=mysqli_num_rows($sql_cek);
     if($cek_admin == "0"){
     $er_email="<div class='alert alert-danger alert-dismissible' role='alert'>
