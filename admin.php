@@ -63,7 +63,7 @@ if(isset($_SESSION["data_admin"]))
         <!-- Custom styles template ini-->
         <link href="asset/style/style_admin.css" rel="stylesheet" type="text/css" media="all">
         <!-- Custom Fonts Awesome-->
-        <link href="asset/font/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="<?php echo $hostname;?>/asset/script/bootstrap.js"></script>
         <script src="<?php echo $hostname;?>/asset/script/ie10-viewport-bug-workaround.js"></script>
@@ -78,7 +78,7 @@ if(isset($_SESSION["data_admin"]))
                    <!-- start form login -->
                    <form action="" method="post" class="formlogin">
                    <div class="form-group row"><!--start form-group-->
-                        <label class="col-lg-3">Email </label>
+                        <label class="col-lg-3">Username </label>
                         <div class="col-lg-8 input-group input-group-sm"><span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                         <input type="text" name="username" placeholder="username" class="form-control" maxlength="40" value="<?php echo $_POST['username'];?>" autofocus>
                         </div>

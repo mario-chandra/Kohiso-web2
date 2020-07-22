@@ -1,8 +1,9 @@
 <?php
 session_start();
-header("Content-type: image/jpeg");
+header("Content-type: image/png");
 
-$captcha_image = imagecreatefrompng("asset/img/cap2.jpg");
+$captcha_image = imagecreate(200, 50);
+imagecolorallocate($gbr, 69, 179, 157);
 $captcha_font = imageloadfont("asset/font/font.gdf");
 $captcha_text = substr(md5(uniqid('')),0,4);
 
