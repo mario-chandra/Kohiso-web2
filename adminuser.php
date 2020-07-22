@@ -1,5 +1,6 @@
 <?php
   require 'functions.php';
+    include "security.php";
 
   $items = fetchData("SELECT * FROM admin");
 

@@ -1,6 +1,6 @@
 <?php
   require 'functions.php';
-
+ include "security.php";
  ?>
 
 <!DOCTYPE html>
