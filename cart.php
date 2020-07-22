@@ -29,39 +29,7 @@
             <img src="asset/img/cart.png">
         </div>
         <div class='container-main'>
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="/index.html">
-                    <img src="asset/img/Logo.png" class='logo'>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=shop.php>SHOP</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="press.html">PRESS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gift.php">EGIFT CARDS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link color-light" href="register">JOIN NOW</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link color-light" href="signin.php">SIGN IN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link color-light" href="logout.php">LOG OUT</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+           <?php include "navbar.php" ?>
 
 
             <div class="head-title fade-in-section" style="margin-top: 1rem">
