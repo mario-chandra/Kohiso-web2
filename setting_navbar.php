@@ -14,14 +14,12 @@
                         <ul class="dropdown-menu">
                              <li><a href="tampilan.php">Lihat Product</a></li>  
                             <li><a href="additem.php">Add Product</a></li>
-                            <li><a href="hapusitem.php">Remove Product</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Akun<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                                <li><a href="adminuser.php">Lihat Admin</a></li>  
                             <li><a href="addadmin.php">Add Admin</a></li>
-                              <li><a href="hapusadmin.php">Remove Admin</a></li>
                             <li><a href="logoutadmin.php">Logout</a></li>
                         </ul>
                     </li>
