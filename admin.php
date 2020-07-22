@@ -7,11 +7,9 @@ if(isset($_SESSION["data_admin"]))
  header("location:adminhome.php");
 }
 
- $user = mysqli_real_escape_string($conect, $_POST['username']);
- $pass = mysqli_real_escape_string($conect, $_POST['password']);
+ $user = mysqli_real_escape_string($conn, $_POST['username']);
+ $pass = mysqli_real_escape_string($conn, $_POST['password']);
  $pass_md5= md5($pass);
- $kode = strtolower(mysqli_real_escape_string($conect, $_POST['kode']));
-
 
   if(isset($_POST['login'])){
     if($user == ""){
@@ -25,12 +23,6 @@ if(isset($_SESSION["data_admin"]))
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span></button>
     <strong>Password Kosong !</strong> <br> Password Wajib diisi</div>";
-    }
-    elseif($_SESSION['kode_session'] != $kode){
-    $er_kode="<div class='alert alert-warning alert-dismissible' role='alert'>
-    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span></button>
-    <strong>Kode Salah !</strong> <br> Ulangi Kode Dengan Benar</div>";
     }
     else{
     $sql_cek=mysqli_query($conect, "SELECT * FROM admin where username='$user' and password='$pass_md5'");
@@ -80,7 +72,7 @@ if(isset($_SESSION["data_admin"]))
                    <div class="form-group row"><!--start form-group-->
                         <label class="col-lg-3">Username </label>
                         <div class="col-lg-8 input-group input-group-sm"><span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                        <input type="text" name="username" placeholder="username" class="form-control" maxlength="40" value="<?php echo $_POST['username'];?>" autofocus>
+                        <input id="user" type="text" name="username" placeholder="username" class="form-control" maxlength="40" value="<?php echo $_POST['username'];?>" autofocus>
                         </div>
                    </div><!--/form-group-->
 
@@ -89,23 +81,10 @@ if(isset($_SESSION["data_admin"]))
                         <label class="col-lg-3">Password</label>
                         <div class="col-lg-8 input-group  input-group-sm">
                         <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
-                        <input id="pass1" type="password" name="password" placeholder="Password" class="form-control" value="<?php echo $_POST['password'];?>" maxlength="15">
+                        <input id="pass" type="password" name="password" placeholder="Password" class="form-control" value="<?php echo $_POST['password'];?>" maxlength="15">
                         </div>
                         </div><!--/form-group-->
                    <?php echo $er_pass;?>
-                   <div class="form-group row"><!--start form-group-->
-
-                        <label class="col-lg-4">Kode Captcha</label>
-                        <div class="col-lg-8">
-                        <div class="col-lg-5">
-                        <img id="kd" alt="kode" src="<?php echo 'kode.php';?>">
-                        </div>
-                        <div class="col-lg-5">
-                        <input id="kode" type="text" name="kode" placeholder="Kode" class="form-control text-center" value="<?php echo $_POST['kode'];?>" maxlength="6">
-                        </div>
-                        </div>
-                        </div><!--/form-group-->
-                   <?php echo $er_kode;?>
 
                    <button class="btn btn-primary btn-block" type="submit" name="login">Log In</button>
 

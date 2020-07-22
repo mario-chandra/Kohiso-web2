@@ -1,7 +1,8 @@
 <?php
 
-  $conn = mysqli_connect("localhost","root","","kohiso");
-    $hostname="http://localhost/kohiso-web2/";
+date_default_timezone_set('Asia/Jakarta');
+$conn = mysqli_connect("localhost","root","","kohiso");
+$hostname="http://localhost/kohiso-web2/";
 
   function addItem($data){
 

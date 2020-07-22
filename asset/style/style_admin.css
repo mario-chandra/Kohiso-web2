@@ -6,12 +6,12 @@
     margin-top:0;
 }
 .login{
-      width:450px;
-      min-height:350px;
+    width:450px;
+      min-height:100px;
       border:#D9534F solid 1px;
       background:rgba(255,255,255,0.6);
       padding:20px;
-      margin:20px auto;
+      margin:250px auto;
       box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
 }
 .login i{
