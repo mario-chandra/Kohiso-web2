@@ -38,9 +38,6 @@ include "setting_navbar.php";
 
         </div>
 
-
-
 <?php
-include "setting_footer.php";
-
+include_once "setting_footer.php";
 ?>
