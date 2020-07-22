@@ -1,7 +1,5 @@
 <?php
   require 'functions.php';
- include "security.php";
-
 
   $id = $_GET["id"];
 

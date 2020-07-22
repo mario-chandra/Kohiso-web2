@@ -4,6 +4,6 @@ if(!isset($_SESSION['data_admin'])){
 }
 else{
 $akun=$_SESSION['data_admin'];
-$admin=mysqli_fetch_array(mysqli_query($conect, "SELECT * FROM admin where username='$akun'"));
+$admin=mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM admin where username='$akun'"));
 }
 ?>
