@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-require 'functions.php';
+include 'functions.php';
 if(isset($_SESSION["data_admin"]))
 {
  header("location:adminhome.php");
@@ -59,14 +59,14 @@ if(isset($_SESSION["data_admin"]))
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kohiso Web Admin</title>
         <!-- Bootstrap core CSS -->
-        <link href="<?php echo $hostname;?>/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Custom styles template ini-->
-        <link href="<?php echo $hostname;?>/assets/css/style_admin.css" rel="stylesheet" type="text/css" media="all">
+        <link href="asset/style/style_admin.css" rel="stylesheet" type="text/css" media="all">
         <!-- Custom Fonts Awesome-->
-        <link href="<?php echo $hostname;?>/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <script src="<?php echo $hostname;?>/assets/js/jquery.min.js"></script>
-        <script src="<?php echo $hostname;?>/assets/js/bootstrap.js"></script>
-        <script src="<?php echo $hostname;?>/assets/js/ie10-viewport-bug-workaround.js"></script>
+        <link href="asset/font/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="<?php echo $hostname;?>/asset/script/bootstrap.js"></script>
+        <script src="<?php echo $hostname;?>/asset/script/ie10-viewport-bug-workaround.js"></script>
 
     </head>
     <body class="bodylogin">

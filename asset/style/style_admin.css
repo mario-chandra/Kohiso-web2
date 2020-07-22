@@ -1,0 +1,136 @@
+/*start form login*/
+.bodylogin{
+    background : #FFF;
+    background: url("../img/coffee.png") no-repeat;
+    background-size: cover;
+    margin-top:0;
+}
+.login{
+      width:450px;
+      min-height:350px;
+      border:#D9534F solid 1px;
+      background:rgba(255,255,255,0.6);
+      padding:20px;
+      margin:20px auto;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+}
+.login i{
+    color:#003399;
+}
+.login h1{
+        font-size:28px;
+        color:#fff;
+        text-align:center;
+        font-family: Times New Roman, Roboto;
+        height:50px;
+        width:100%;
+        background:#385bc3;
+        line-height:50px;
+}
+.formlogin{
+    background:#0396;
+    padding:15px;
+}
+
+@media(max-width:450px) {
+    .login{
+      width:300px;
+    }
+}
+/*end form login*/
+
+/*Template admin*/
+
+body {
+    background-color: #fff;
+}
+
+#wrapper {
+    padding-left:0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+    margin-right:0;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+.navbar-inverse {
+    background-color: #744FD9;
+    border-color: #4927A7;
+}
+.navbar a.navbar-brand{
+    color:#fff;
+}
+.navbar-inverse .navbar-nav li a{
+    color:#fff;
+        font-size:14px;
+    }
+.navbar-inverse .navbar-nav li ul li a{
+    color:#000;
+    font-size:14px;
+    min-width:225px;
+    border-bottom:#BBB solid 1px;
+    }

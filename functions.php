@@ -1,7 +1,7 @@
 <?php
 
   $conn = mysqli_connect("localhost","root","","kohiso");
-
+    $hostname="http://localhost/kohiso-web2/";
 
   function addItem($data){
 
