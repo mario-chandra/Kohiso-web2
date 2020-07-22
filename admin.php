@@ -9,7 +9,6 @@ if(isset($_SESSION["data_admin"]))
 
  $user = mysqli_real_escape_string($conn, $_POST['username']);
  $pass = mysqli_real_escape_string($conn, $_POST['password']);
- $pass_md5= md5($pass);
 
   if(isset($_POST['login'])){
     if($user == ""){
@@ -25,7 +24,7 @@ if(isset($_SESSION["data_admin"]))
     <strong>Password Kosong !</strong> <br> Password Wajib diisi</div>";
     }
     else{
-    $sql_cek=mysqli_query($conn, "SELECT * FROM admin where username='$user' and password='$pass_md5'");
+    $sql_cek=mysqli_query($conn, "SELECT * FROM admin where username='$user' and password='$pass'");
     $cek_admin=mysqli_num_rows($sql_cek);
     if($cek_admin == "0"){
     $er_email="<div class='alert alert-danger alert-dismissible' role='alert'>
@@ -57,8 +56,9 @@ if(isset($_SESSION["data_admin"]))
         <!-- Custom Fonts Awesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="<?php echo $hostname;?>/asset/script/bootstrap.js"></script>
-        <script src="<?php echo $hostname;?>/asset/script/ie10-viewport-bug-workaround.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
 
     </head>
     <body class="bodylogin">
