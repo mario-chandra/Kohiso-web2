@@ -7,41 +7,60 @@
 
   $item = fetchData("SELECT * FROM admin WHERE id = '$id'")[0];
 
+  $username = $item['username'];
+  $password = $item['password'];
  ?>
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <title>Kohiso Admin</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel='stylesheet' type="text/css" href="asset/style/style.css">
+</head>
    </head>
-   <body>
-     <h1>EDIT ITEM</h1>
-     <form class="" method="post">
-       <input type="hidden" name="id" value="<?= $item["id"] ?>">
-       <label for="name">Username:</label>
-       <input type="text" name="username" id="username" >
-       <br>
-       <label for="deskripsi">password:</label>
-       <input type="password" name="password" id="password" >
-       <br>
-       <button type="submit" name="submit">submit</button>
-     </form>
+   <body style="background-color: white; color: var(--purple); padding: 35%; padding-top: 10%; padding-bottom: 0">
+      <div class="text-center rounded shadow p-3">
+       <h5 class="pb-2">EDIT ITEM</h5><br>
+       <form class="px-3" method="post">
+          <input type="hidden" name="id" value="<?= $item["id"] ?>">
+          <div class="d-flex justify-content-between pb-3">
+            <label for="name">Username</label>
+            <input type="text" name="username" id="username" value="<?php echo $item['username'];?>">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label for="deskripsi">Password</label>
+            <input type="password" name="password" id="password" value="<?php echo $item['password'];?>">   
+          </div><br>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">cancel</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">submit</button>
+        </form>
+      </div>
 
      <?php
-     if(isset($_POST["submit"])):
-       if(gantiAdmin($_POST)>0):
-         echo "<script>
-              alert('berhasil');
-              document.location.href = 'adminuser.php';
-              </script>";
-       else :
-         echo "gagal";
-       endif;
+     if($_SERVER["REQUEST_METHOD"] == "POST"):
+        if(isset($_POST['username'])):
+          if(empty($_POST['username']) or empty($_POST['password'])):
+            echo "<script>
+                alert('Username dan password tidak boleh dikosongkan');
+                </script>";
+          else:
+            if(editAdmin($_POST)>-1):
+              echo "<script>
+                  alert('berhasil');
+                  document.location.href = 'adminuser.php';
+                  </script>";
+            else:
+              echo "<script>
+                  alert('gagal');
+                  </script>";
+            endif;
+          endif;
+        endif;
      endif;
       ?>
-
-      <a href="adminuser.php">kembali</a>
 
 
    </body>

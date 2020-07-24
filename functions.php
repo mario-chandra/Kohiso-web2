@@ -68,7 +68,7 @@ $hostname="http://localhost/kohiso-web2/";
     return mysqli_affected_rows($conn);
   }
 
-  function gantiAdmin($data){
+  function editAdmin($data){
     global $conn;
     $id = $data["id"];
     $username = $data["username"];
