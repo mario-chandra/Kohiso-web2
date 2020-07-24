@@ -163,6 +163,53 @@ $hostname="http://localhost/kohiso-web2/";
 
     mysqli_query($conn,"DELETE FROM cart WHERE username = '$data'");
 
+  }
+
+  function hapusCheckout($data){
+    global $conn ;
+    $query = "DELETE FROM checkout WHERE id = '$data'";
+
+    mysqli_query($conn,$query);
+    return mysqli_affected_rows($conn);
+  }
+
+  function kirim($data){
+    global $conn;
+    $id = $data["id"];
+    $username = $data["username"];
+    $nama = $data["nama"];
+    $harga = $data["harga"];
+    $status = $data["status"];
+    $query = "UPDATE checkout SET
+      username ='$username' ,
+      nama = '$nama' ,
+      harga = '$harga',
+      status = 'terkirim'
+      WHERE id = $id ";
+
+      mysqli_query($conn,$query);
+
+      mysqli_affected_rows($conn);
+
+  }
+
+  function batal($data){
+    global $conn;
+    $id = $data["id"];
+    $username = $data["username"];
+    $nama = $data["nama"];
+    $harga = $data["harga"];
+    $status = $data["status"];
+    $query = "UPDATE checkout SET
+      username ='$username' ,
+      nama = '$nama' ,
+      harga = '$harga',
+      status = 'batal'
+      WHERE id = $id ";
+
+      mysqli_query($conn,$query);
+
+      mysqli_affected_rows($conn);
 
   }
 
