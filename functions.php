@@ -13,7 +13,7 @@ $hostname="http://localhost/kohiso-web2/";
 
     $query = "INSERT INTO item
     VALUES (
-     '',  '$name' , '$deskripsi' , '$harga'
+     DEFAULT,  '$name' , '$deskripsi' , '$harga'
     ) ";
 
     mysqli_query($conn,$query);
@@ -99,7 +99,7 @@ $hostname="http://localhost/kohiso-web2/";
 
     $query = "INSERT INTO account
     VALUES (
-     '',  '$firstName' , '$lastName' , '$phoneNum' , '$gender' , '$username' , '$address' , '$password'
+     DEFAULT,  '$firstName' , '$lastName' , '$phoneNum' , '$gender' , '$username' , '$address' , '$password'
     ) ";
 
     mysqli_query($conn,$query);
@@ -113,9 +113,8 @@ $hostname="http://localhost/kohiso-web2/";
     $username = $data["username"];
     $password = $data["password"];
 
-    $query = "INSERT INTO admin
-    VALUES(
-      '', '$username' , '$password'
+    $query = "INSERT INTO admin VALUES (
+      DEFAULT, '$username' , '$password'
     )";
 
     mysqli_query($conn,$query);
@@ -134,7 +133,7 @@ $hostname="http://localhost/kohiso-web2/";
 
     $query = "INSERT INTO cart
     VALUES(
-      '', '$username' , '$nama' , '$harga'
+      DEFAULT, '$username' , '$nama' , '$harga'
     )";
 
     mysqli_query($conn,$query);
@@ -151,7 +150,7 @@ $hostname="http://localhost/kohiso-web2/";
     $price = $data["itemPrice"];
 
     $query = "INSERT INTO checkout VALUES(
-      '', '$username' , '$nama' , '$price' , '$status'
+      DEFAULT, '$username' , '$nama' , '$price' , '$status'
     )";
 
     mysqli_query($conn,$query);
