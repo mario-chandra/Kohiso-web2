@@ -10,38 +10,51 @@
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <title>Kohiso Web Admin</title>
+        <!-- Bootstrap core CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Custom styles template ini-->
+      <link href="asset/style/style_admin.css" rel="stylesheet" type="text/css" media="all">
+      <link href="asset/style/style.css" rel="stylesheet" type="text/css" media="all">
+      <!-- Custom Fonts Awesome-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
    </head>
-   <body>
-     <h1>Daftar admin</h1>
+   <body style="background-color: white; padding-right: 10%; padding-left: 10%">
 
-     <table border="1" cellpadding = "10" cellspacing = "0" >
-       <tr>
-
-         <th>no</th>
-         <th>pengaturan</th>
-         <th>id</th>
-         <th>nama</th>
-         <th>password</th>
-       </tr>
-       <?php foreach($items as $item):?>
-       <tr>
-
-         <td><?= $i; ?></td>
-         <td>
-           <a href="gantiadmin.php?id=<?= $item['id'] ?>">edit</a>
-           <a href="hapusadmin.php?id=<?= $item['id'] ?>">hapus</a>
-         </td>
-         <?= "<td>".$item['id']."</td>" ?>
-         <?= "<td>".$item['username']."</td>" ?>
-         <?= "<td>".$item['password']."</td>" ?>
-       </tr>
-       <?php $i++ ?>
+      <h3 class="py-3" style="color: var(--purple)">Daftar admin</h3>
 
 
-     <?php endforeach; ?>
+      <table class="table rounded shadow-sm table-striped" style="background-color: white">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Pengaturan</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($items as $item):?>
+            <tr>
+              <th scope="row"><?= $i; ?></td>
+              <td>
+                <button class="btn btn-sm kohiso-btn w-25 mr-2" window.location.href="gantiadmin.php?id=<?= $item['id'] ?>">Edit</button>
+                <button class="btn btn-sm kohiso-btn w-25" window.location.href="hapusadmin.php?id=<?= $item['id'] ?>">Delete</button>
 
-     </table>
+              </td>
+              <?= "<td>".$item['id']."</td>" ?>
+              <?= "<td>".$item['username']."</td>" ?>
+              <?= "<td>".$item['password']."</td>" ?>
+            </tr>
+            <?php $i++ ?>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
 
    </body>
  </html>
