@@ -8,6 +8,7 @@
     require 'functions.php';
 
     $items = fetchData("SELECT * FROM cart WHERE username = '$username'  ");
+
   }
 
 
@@ -42,6 +43,9 @@
 
 	<div class="cart-container row m-0" style="color: black">
 		<div class="col-8">
+          <?php $cartCount = 0; ?>
+
+
 
           <?php foreach ($items as $item): ?>
 
@@ -55,12 +59,27 @@
                     <a href="deleteCartItem.php?id=<?= $item['id'] ?>"><img src="asset/img/trash.png" style="width: 5%; position: absolute; bottom: 1rem; right: 1rem"></a>
     			</div>
             </div>
-            <?php
-              $hargastr = $item["harga"];
-              $hargaint = (int)$hargastr;
-              $totalHarga = $totalHarga + $hargaint;
-            ?>
+              <?php
+
+                $namaBarang = $item["nama"];
+                $hargastr = $item["harga"];
+                $hargaint = (int)$hargastr;
+                $totalHarga = $totalHarga + $hargaint;
+                $arrCart[$cartCount] =  array(
+                  "username" => $username,
+                  "itemName" => $namaBarang,
+                  "itemPrice" => $hargaint
+                );
+              $cartCount++;
+              ?>
           <?php endforeach; ?>
+
+          <?php if ($items == null): ?>
+            <h1>Keranjang kamu kosong ayo belanja</h1>
+          <?php endif; ?>
+
+
+
 
 		</div>
         <div class="col-4 p-3 px-4">
@@ -70,10 +89,20 @@
                     <div>Sub Total</div>
                     <div><strong>Rp. <?= $totalHarga ?></strong></div>
                 </div>
-                <button type="button" class="btn btn-danger w-100 mt-2">CHECK OUT</button>
+                <form class=""  method="post">
+                  <button type="submit" class="btn btn-danger w-100 mt-2" name="checkout">CHECK OUT</button>
+                </form>
             </div>
         </div>
 	</div>
+
+      <?php if (isset($_POST["checkout"])): ?>
+        <?php if (checkout($value) > 0): ?>
+          <?php clearCart($username); ?>
+          <?php header("Location:index.php"); ?>
+
+        <?php endif; ?>
+      <?php endif; ?>
 
 
     <div class="footer">
