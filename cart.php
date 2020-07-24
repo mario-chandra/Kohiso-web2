@@ -97,11 +97,17 @@
 	</div>
 
       <?php if (isset($_POST["checkout"])): ?>
-        <?php if (checkout($value) > 0): ?>
-          <?php clearCart($username); ?>
-          <?php header("Location:index.php"); ?>
-
+        <?php if ($totalHarga > 0): ?>
+          <?php if (checkout($value) > 0): ?>
+            <?php clearCart($username); ?>
+            <?php header("Location:index.php"); ?>
+          <?php endif; ?>
+        <?php else: ?>
+          <script>
+            alert("tidak ada barang di Keranjang")
+          </script>
         <?php endif; ?>
+
       <?php endif; ?>
 
 
