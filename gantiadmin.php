@@ -23,16 +23,16 @@
    </head>
    <body style="background-color: white; color: var(--purple); padding: 35%; padding-top: 10%; padding-bottom: 0">
       <div class="text-center rounded shadow p-3">
-       <h5 class="pb-2">EDIT ITEM</h5><br>
+       <h5 class="pb-2">Edit Admin</h5><br>
        <form class="px-3" method="post">
           <input type="hidden" name="id" value="<?= $item["id"] ?>">
           <div class="d-flex justify-content-between pb-3">
             <label for="name">Username</label>
-            <input type="text" name="username" id="username" value="<?php echo $item['username'];?>">
+            <input type="text" name="username" id="username" value="<?php echo $item['username'];?>" required>
           </div>
           <div class="d-flex justify-content-between">
             <label for="deskripsi">Password</label>
-            <input type="password" name="password" id="password" value="<?php echo $item['password'];?>">   
+            <input type="password" name="password" id="password" value="<?php echo $item['password'];?>" required>   
           </div><br>
           <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">cancel</button>
           <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">submit</button>
@@ -41,23 +41,15 @@
 
      <?php
      if($_SERVER["REQUEST_METHOD"] == "POST"):
-        if(isset($_POST['username'])):
-          if(empty($_POST['username']) or empty($_POST['password'])):
-            echo "<script>
-                alert('Username dan password tidak boleh dikosongkan');
-                </script>";
-          else:
-            if(editAdmin($_POST)>-1):
-              echo "<script>
-                  alert('berhasil');
-                  document.location.href = 'adminuser.php';
-                  </script>";
-            else:
-              echo "<script>
-                  alert('gagal');
-                  </script>";
-            endif;
-          endif;
+        if(editAdmin($_POST)>-1):
+          echo "<script>
+              alert('berhasil');
+              document.location.href = 'adminuser.php';
+              </script>";
+        else:
+          echo "<script>
+              alert('gagal');
+              </script>";
         endif;
      endif;
       ?>

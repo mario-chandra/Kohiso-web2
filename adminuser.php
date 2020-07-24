@@ -43,8 +43,8 @@
             <tr>
               <th scope="row"><?= $i; ?></td>
               <td>
-                <button class="btn btn-sm kohiso-btn w-25 mr-2" onclick="window.location.href='gantiadmin.php?id=<?= $item['id'] ?>'">Edit</button>
-                <button class="btn btn-sm kohiso-btn w-25" onclick="window.location.href='hapusadmin.php?id=<?= $item['id'] ?>'">Delete</button>
+                <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='gantiadmin.php?id=<?= $item['id'] ?>'">Edit</button>
+                <button class="btn btn-sm btn-outline-dark w-25" onclick="window.location.href='hapusadmin.php?id=<?= $item['id'] ?>'">Delete</button>
 
               </td>
               <?= "<td>".$item['id']."</td>" ?>
