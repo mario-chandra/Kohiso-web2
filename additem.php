@@ -43,7 +43,7 @@
             <input class="col-8 p-0 text-right" type="file" name="fileToUpload" id="fileToUpload" required> 
           </div><br>
           <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">add item</button>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">cancel</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./tampilan.php'">cancel</button>
         </form>
       </div>
 
@@ -85,7 +85,7 @@
               </script>";
         // if everything is ok, try to upload file
         } else {
-            if(addItem($_POST, $_FILES["fileToUpload"]["tmp_name"])>0):
+            if(addItem($_POST, $_FILES["fileToUpload"]["tmp_name"], $_FILES['fileToUpload']['type'])>0):
               echo "
               <script>
               alert('berhasil');
