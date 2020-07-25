@@ -96,18 +96,25 @@
         </div>
 	</div>
 
-      <?php if (isset($_POST["checkout"])): ?>
-        <?php if ($totalHarga > 0): ?>
-          <?php if (checkout($value) > 0): ?>
-            <?php clearCart($username); ?>
-            <?php header("Location:index.php"); ?>
-          <?php endif; ?>
-        <?php else: ?>
-          <script>
-            alert("tidak ada barang di Keranjang")
-          </script>
-        <?php endif; ?>
 
+
+      <?php if (isset($_POST["checkout"])): ?>
+        <?php if ($items == null): ?>
+            <script>
+              alert("keranjang kamu kosong")
+              document,location.href = 'shop.php';
+            </script>
+          <?php else: ?>
+            <?php foreach ($arrCart as $key => $value): ?>
+              <?php if (checkout($value) > 0): ?>
+                <?php clearCart($username); ?>
+                <script>
+                  alert('terima kasih ');
+                  document,location.href = 'shop.php';
+                </script>
+              <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
       <?php endif; ?>
 
 
