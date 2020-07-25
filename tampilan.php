@@ -67,25 +67,8 @@
                   <?php foreach($items as $item):?>
                   <tr>
 
-<<<<<<< HEAD
-        <td><?= $i; ?></td>
-        <td> 
-        <td>
-          <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='gantiitem.php?id=<?= $item['id'] ?>">Edit</button>
-          <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='hapusitem.php?id=<?= $item['id'] ?>">Delete</button>
-        </td>
-        <?= "<td>".$item['id']."</td>" ?>
-        <?= "<td>".$item['name']."</td>" ?>
-        <?= "<td>".$item['harga']."</td>" ?>
-        <?= "<td>".$item['deskripsi']."</td>" ?>
-      </tr>
-      <?php $i++ ?>
-    <?php endforeach; ?>
-        </tbody>
-    </table>
-=======
                     <th scope="row"><?= $i; ?></th>
-                    <td> 
+                    <td>
                       <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
                       <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='hapusitem.php?id=<?= $item['id'] ?>'">Delete</button>
                     </td>
@@ -102,7 +85,6 @@
             </div>
           </div>
        </div>
->>>>>>> 1a3d6c4f4ad188541be8a1eea390ec1a1a254b1b
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
   </body>
 </html>
