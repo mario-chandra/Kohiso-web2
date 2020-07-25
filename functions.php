@@ -4,16 +4,16 @@ date_default_timezone_set('Asia/Jakarta');
 $conn = mysqli_connect("localhost","root","","kohiso");
 $hostname="http://localhost/kohiso-web2/";
 
-  function addItem($data){
+  function addItem($data,$imageUploaded){
 
     global $conn;
     $name = $data["name"];
     $deskripsi = $data["deskripsi"];
     $harga = $data["harga"];
-
+    $image   = addslashes(file_get_contents($imageUploaded));
     $query = "INSERT INTO item
     VALUES (
-     DEFAULT,  '$name' , '$deskripsi' , '$harga'
+     DEFAULT,  '$name' , '$deskripsi' , '$harga', '$image'
     ) ";
 
     mysqli_query($conn,$query);
@@ -212,5 +212,6 @@ $hostname="http://localhost/kohiso-web2/";
       mysqli_affected_rows($conn);
 
   }
+
 
  ?>
