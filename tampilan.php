@@ -84,23 +84,6 @@
               </table>
             </div>
           </div>
-        <th scope="row"><?= $i; ?></th>
-        <td> 
-          <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
-          <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='hapusitem.php?id=<?= $item['id'] ?>'">Delete</button>
-        </td>
-        <td><?= $item['id'] ?></td>
-        <td><?= $item['name'] ?></td>
-        <td><?= $item['harga'] ?></td>
-        <td><?= $item['deskripsi'] ?></td>
-        <td><img src="<?php echo show_img($item['id']) ?>" style="width: 100%;"></td>
-      </tr>
-      <?php $i++ ?>
-    <?php endforeach; ?>
-        </tbody>
-    </table>
-            </div>
-           </div>
        </div>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
   </body>
