@@ -49,24 +49,41 @@
         ?>
         <div id="page-wrapper">
            <div class="container">
-    <h1 class="py-3" style="color: var(--purple)">Edit Produk</h1>
+              <h1 class="py-3" style="color: var(--purple)">Edit Produk</h1>
 
-    <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
-      <thead>
-        <tr>
-        <th scope="col">No</th>
-        <th scope="col">Pengaturan</th>
-        <th scope="col">Id</th>
-        <th scope="col">Nama</th>
-        <th scope="col">Harga</th>
-        <th scope="col">Deskripsi</th>
-        <th scope="col" style="width: 25%">Gambar</th>
-      </tr>
-        </thead>
-        <tbody>
-      <?php foreach($items as $item):?>
-      <tr>
+              <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
+                <thead>
+                  <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Pengaturan</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Harga</th>
+                  <th scope="col">Deskripsi</th>
+                  <th scope="col" style="width: 25%">Gambar</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($items as $item):?>
+                  <tr>
 
+                    <th scope="row"><?= $i; ?></th>
+                    <td> 
+                      <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
+                      <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='hapusitem.php?id=<?= $item['id'] ?>'">Delete</button>
+                    </td>
+                    <td><?= $item['id'] ?></td>
+                    <td><?= $item['name'] ?></td>
+                    <td><?= $item['harga'] ?></td>
+                    <td><?= $item['deskripsi'] ?></td>
+                    <td><img src="<?php echo show_img($item['id']) ?>" style="width: 100%;"></td>
+                  </tr>
+                  <?php $i++ ?>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         <th scope="row"><?= $i; ?></th>
         <td> 
           <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
