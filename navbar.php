@@ -1,4 +1,3 @@
-
  			<nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="/index.html">
                     <img src="asset/img/Logo.png" class="logo">

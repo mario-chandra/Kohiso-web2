@@ -4,7 +4,6 @@
     require 'functions.php';
     include "security.php";
 
-
   $id = $_GET["id"];
 
 
@@ -23,7 +22,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel='stylesheet' type="text/css" href="asset/style/style.css">
 </head>
-   </head>
    <body style="background-color: white; color: var(--purple); padding: 35%; padding-top: 10%; padding-bottom: 0">
       <div class="text-center rounded shadow p-3">
        <h5 class="pb-2">Edit Admin</h5><br>

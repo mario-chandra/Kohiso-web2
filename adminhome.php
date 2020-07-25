@@ -31,6 +31,7 @@ require "setting_navbar.php";
             </div>
 
         </div>
+</div>
 
 
 

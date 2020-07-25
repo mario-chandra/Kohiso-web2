@@ -52,7 +52,13 @@ body {
 
 #page-wrapper {
     width: 100%;
-    padding: 0;
+    padding: 0s;
     background-color: #fff;
+}
+
+table td[class*=col-], table th[class*=col-] {
+    position: static;
+    display: table-cell;
+    float: none;
 }
 
