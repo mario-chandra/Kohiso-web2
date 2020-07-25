@@ -24,9 +24,9 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
      <meta charset="utf-8">
      <title>Kohiso Web Admin</title>
         <!-- Bootstrap core CSS -->
@@ -42,7 +42,13 @@
        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
        <script type="text/javascript" src="admin.js"></script>
    </head>
-  <body style="background-color: white; padding-right: 10%; padding-left: 10%">
+   <body style="background-color:white;">
+       <div id="wrapper">
+        <?php
+        require "setting_navbar.php";
+        ?>
+        <div id="page-wrapper">
+           <div class="container">
     <h1 class="py-3" style="color: var(--purple)">Edit Produk</h1>
 
     <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
@@ -60,10 +66,10 @@
       <?php foreach($items as $item):?>
       <tr>
 
-        <td><?= $i; ?></td>
+        <th scope="row"><?= $i; ?></th>
         <td> 
-          <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='gantiitem.php?id=<?= $item['id'] ?>">Edit</button>
-          <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='hapusitem.php?id=<?= $item['id'] ?>">Delete</button>
+          <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
+          <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="document.location.href='hapusitem.php?id=<?= $item['id'] ?>'">Delete</button>
         </td>
         <?= "<td>".$item['id']."</td>" ?>
         <?= "<td>".$item['name']."</td>" ?>

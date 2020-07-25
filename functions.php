@@ -19,6 +19,7 @@ $hostname="http://localhost/kohiso-web2/";
     mysqli_query($conn,$query);
 
     return mysqli_affected_rows($conn);
+    
   }
 
   function fetchData($query){
