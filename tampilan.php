@@ -62,6 +62,7 @@
 
         <td><?= $i; ?></td>
         <td> 
+        <td>
           <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='gantiitem.php?id=<?= $item['id'] ?>">Edit</button>
           <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='hapusitem.php?id=<?= $item['id'] ?>">Delete</button>
         </td>

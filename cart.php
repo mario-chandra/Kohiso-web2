@@ -111,6 +111,7 @@
                 <script>
                   alert('terima kasih ');
                   document,location.href = 'shop.php';
+                  document.location.href = 'shop.php';
                 </script>
               <?php endif; ?>
             <?php endforeach; ?>

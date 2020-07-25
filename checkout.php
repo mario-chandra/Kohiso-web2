@@ -52,6 +52,7 @@
               <script>
                 alert ('berhasil')
                 document,location.href = 'checkout.php';
+                document location.href = 'checkout.php';
               </script>
               ";
             }else {
@@ -70,6 +71,7 @@
             <script>
               alert ('berhasil')
               document,location.href = 'checkout.php';
+              document.location.href = 'checkout.php';
             </script>
             ";
           }else {
@@ -88,6 +90,7 @@
             <script>
               alert ('berhasil')
               document,location.href = 'checkout.php';
+              document.location.href = 'checkout.php';
             </script>
             ";
           }else {
@@ -95,6 +98,7 @@
               <script>
                 alert('berhasil')
                 document,location.href = 'checkout.php';
+                document.location.href = 'checkout.php';
               </script>
             ";
           }
