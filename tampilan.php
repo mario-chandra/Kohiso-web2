@@ -67,6 +67,7 @@
                   <?php foreach($items as $item):?>
                   <tr>
 
+
                     <th scope="row"><?= $i; ?></th>
                     <td> 
                       <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
