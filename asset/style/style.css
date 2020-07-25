@@ -213,8 +213,7 @@ a.us {
 .product-detail {
     font-weight: bold;
     font-size: 1.5rem;
-    background: #7A4F47;
-    opacity: 0.6;
+    background: rgb(122, 79, 71, 0.6);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     position: absolute;
