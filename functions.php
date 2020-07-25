@@ -4,16 +4,21 @@ date_default_timezone_set('Asia/Jakarta');
 $conn = mysqli_connect("localhost","root","","kohiso");
 $hostname="http://localhost/kohiso-web2/";
 
-  function addItem($data,$imageUploaded){
+  function addItem($data,$imageUploaded, $imageType){
 
     global $conn;
     $name = $data["name"];
     $deskripsi = $data["deskripsi"];
     $harga = $data["harga"];
-    $image   = addslashes(file_get_contents($imageUploaded));
+    $img_type = $imageType;
+
+    // Convert to base64 
+    $image_base64 = base64_encode(file_get_contents($imageUploaded));
+    $image = 'data:image/'.$img_type.';base64,'.$image_base64;
+
     $query = "INSERT INTO item
     VALUES (
-     DEFAULT,  '$name' , '$deskripsi' , '$harga', '$image'
+     DEFAULT,  '$name' , '$deskripsi' , '$harga', '$image', '$img_type'
     ) ";
 
     mysqli_query($conn,$query);
@@ -50,17 +55,25 @@ $hostname="http://localhost/kohiso-web2/";
    return mysqli_affected_rows($conn);
  }
 
-  function updateData($data){
+  function updateData($data, $imageUploaded, $imageType){
     global $conn;
     $id = $data["id"];
     $name = $data["name"];
     $deskripsi = $data["deskripsi"];
     $harga = $data["harga"];
 
+    $img_type = $imageType;
+
+    // Convert to base64 
+    $image_base64 = base64_encode(file_get_contents($imageUploaded));
+    $image = 'data:image/'.$img_type.';base64,'.$image_base64;
+
     $query = "UPDATE item SET
       name ='$name' ,
       deskripsi = '$deskripsi' ,
-      harga = '$harga'
+      harga = '$harga' ,
+      image = '".$image."' ,
+      img_type = '$img_type'
       WHERE id = $id";
 
 
@@ -214,4 +227,13 @@ $hostname="http://localhost/kohiso-web2/";
   }
 
 
+  function show_img($id){
+
+      $conn = mysqli_connect("localhost","root","","kohiso");
+      $hostname="http://localhost/kohiso-web2/";
+      $query = mysqli_query($conn,"select * from item where id='$id'");
+      $row = mysqli_fetch_array($query);
+      header("Content-type" . $row["img_type"]);
+      return $row["image"];
+  }
  ?>
