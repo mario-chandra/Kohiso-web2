@@ -7,6 +7,7 @@
   $items = fetchData("SELECT * FROM admin");
 
   $i = 1;
+ 
  ?>
 
  <!DOCTYPE html>
@@ -21,17 +22,18 @@
       <link href="asset/style/style.css" rel="stylesheet" type="text/css" media="all">
       <!-- Custom Fonts Awesome-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+       <script type="text/javascript" src="admin.js"></script>
    </head>
    <body style="background-color: white; padding-right: 10%; padding-left: 10%">
 
       <h3 class="py-3" style="color: var(--purple)">Daftar admin</h3>
 
 
-      <table class="table rounded shadow-sm table-striped" style="background-color: white">
+      <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
         <thead>
           <tr>
             <th scope="col">No</th>
@@ -44,7 +46,7 @@
         <tbody>
           <?php foreach($items as $item):?>
             <tr>
-              <th scope="row"><?= $i; ?></td>
+              <th scope="row"><?= $i; ?></th>
               <td>
                 <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='gantiadmin.php?id=<?= $item['id'] ?>'">Edit</button>
                 <button class="btn btn-sm btn-outline-dark w-25" onclick="window.location.href='hapusadmin.php?id=<?= $item['id'] ?>'">Delete</button>
@@ -58,6 +60,7 @@
           <?php endforeach; ?>
         </tbody>
       </table>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
    </body>
  </html>
