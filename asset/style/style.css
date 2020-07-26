@@ -41,12 +41,12 @@ body {
     border-radius: 58px;
     background-color: var(--light);
     color: var(--purple);
+    transition: 0.3s ease-in-out;
 }
 
 .kohiso-btn:hover {
-    background-color: var(--brown);
+    background-color: var(--purple);
     color: var(--light);
-    transition-duration: 0.3s;
 }
 
 .purple-bg {
@@ -145,6 +145,13 @@ img {
     border: 1px solid #FFF8DF;
     box-sizing: border-box;
     border-radius: 28px;
+    transition: 0.2s;
+    transition: transform 0.5s;
+}
+.btn-see:hover {
+    transform: scale(1.1);
+    color: var(--light);
+    background-color: var(--black);
 }
 
 .product-container {
@@ -215,7 +222,6 @@ a.us {
 
 .re-btn {
     width: 141px;
-    height: 49px;
 }
 
 .product-detail {

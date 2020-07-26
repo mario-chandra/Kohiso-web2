@@ -52,7 +52,7 @@
 	                		</div>
 	                		<div class="col">
 	                			<label>GENDER</label>
-	                   			<select class="form-control" style="background-color: var(--light)" name="gender" required="">
+	                   			<select class="form-control border-0" style="background-color: var(--light)" name="gender" required>
   								    <option>Male</option>
   								    <option>Female</option>
   								    <option>Custom</option>
