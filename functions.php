@@ -13,6 +13,12 @@ $hostname="http://localhost/kohiso-web2/";
     $img_type = $imageType;
 
     // Convert to base64
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+      echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+      echo "Sorry, there was an error uploading your file.";
+    }
+    // Convert to base64 
     $image_base64 = base64_encode(file_get_contents($imageUploaded));
     $image = 'data:image/'.$img_type.';base64,'.$image_base64;
 
@@ -22,9 +28,18 @@ $hostname="http://localhost/kohiso-web2/";
     ) ";
 
     mysqli_query($conn,$query);
+    $affected_rows = mysqli_affected_rows($conn);
 
     return mysqli_affected_rows($conn);
 
+    $insert_id = mysqli_insert_id($conn);
+    $target_dir = "asset/img/prd-img/";
+    $target_file = $target_dir . $insert_id;
+
+    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+    return $affected_rows;
+    
   }
 
   function fetchData($query){
@@ -78,8 +93,14 @@ $hostname="http://localhost/kohiso-web2/";
 
 
     mysqli_query($conn,$query);
+    $affected_rows = mysqli_affected_rows($conn);
 
-    return mysqli_affected_rows($conn);
+    $target_dir = "asset/img/prd-img/";
+    $target_file = $target_dir . $id;
+
+    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+    return $affected_rows;
   }
 
   function editAdmin($data){
@@ -228,12 +249,8 @@ $hostname="http://localhost/kohiso-web2/";
 
 
   function show_img($id){
-
-      $conn = mysqli_connect("localhost","root","","kohiso");
-      $hostname="http://localhost/kohiso-web2/";
-      $query = mysqli_query($conn,"select * from item where id='$id'");
-      $row = mysqli_fetch_array($query);
-      return $row["image"];
+      $target_dir = "asset/img/prd-img/";
+      return $target_dir . $id;
   }
 
 

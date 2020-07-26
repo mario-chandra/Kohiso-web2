@@ -67,13 +67,13 @@
           echo "File is an image - " . $check["mime"] . ".";
           $uploadOk = 1;
         } else {
-          echo "File is not an image.";
+          echo "File is not an image. ";
           $uploadOk = 0;
         }
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
           echo "Sorry, your file is too large.";
-          $uploadOk = 0;
+          $uploadOk = 0; 
         }
 
         // Allow certain file formats
