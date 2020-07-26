@@ -74,9 +74,13 @@ img {
 }
 
 .container-img {
+    height: 100%;
     opacity: 0.5;
 }
 
+.container-img img{
+    height: 100%;
+}
 .container-main {
     width: 100%;
     padding: 2rem 1rem;
