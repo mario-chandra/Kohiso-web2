@@ -12,7 +12,7 @@ $hostname="http://localhost/kohiso-web2/";
     $harga = $data["harga"];
     $img_type = $imageType;
 
-    // Convert to base64 
+    // Convert to base64
     $image_base64 = base64_encode(file_get_contents($imageUploaded));
     $image = 'data:image/'.$img_type.';base64,'.$image_base64;
 
@@ -24,7 +24,7 @@ $hostname="http://localhost/kohiso-web2/";
     mysqli_query($conn,$query);
 
     return mysqli_affected_rows($conn);
-    
+
   }
 
   function fetchData($query){
@@ -64,7 +64,7 @@ $hostname="http://localhost/kohiso-web2/";
 
     $img_type = $imageType;
 
-    // Convert to base64 
+    // Convert to base64
     $image_base64 = base64_encode(file_get_contents($imageUploaded));
     $image = 'data:image/'.$img_type.';base64,'.$image_base64;
 
@@ -234,5 +234,41 @@ $hostname="http://localhost/kohiso-web2/";
       $query = mysqli_query($conn,"select * from item where id='$id'");
       $row = mysqli_fetch_array($query);
       return $row["image"];
+  }
+
+
+  function editUser($data){
+    global $conn;
+    $id = $data["id"];
+    $firstName = $data["FirstName"];
+    $lastName = $data["LastName"];
+    $phoneNum = $data["PhoneNum"];
+    $gender = $data["Gender"];
+    $username = $data["Username"];
+    $address = $data["Address"];
+    $password = $data["Password"];
+
+    $query = "UPDATE account SET
+      id = '$id',
+      FirstName ='$firstName' ,
+      LastName ='$lastName' ,
+      PhoneNum = '$phoneNum',
+      Gender = '$gender' ,
+      Username ='$username' ,
+      Address ='$address' ,
+      password = '$password'
+      WHERE id = $id";
+
+      mysqli_query($conn,$query);
+      return mysqli_affected_rows($conn);
+
+
+  }
+
+  function deleteAccount($data){
+    global $conn ;
+    $id = $data["id"];
+    mysqli_query($conn,"DELETE FROM account WHERE id = '$id'");
+    return mysqli_affected_rows($conn);
   }
  ?>
