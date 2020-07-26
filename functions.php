@@ -233,7 +233,6 @@ $hostname="http://localhost/kohiso-web2/";
       $hostname="http://localhost/kohiso-web2/";
       $query = mysqli_query($conn,"select * from item where id='$id'");
       $row = mysqli_fetch_array($query);
-      header("Content-type" . $row["img_type"]);
       return $row["image"];
   }
  ?>
