@@ -7,6 +7,14 @@
     <ul class="navbar-nav ml-auto mr-5">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          User
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="checkout.php">View Transaction</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Product
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -14,14 +22,14 @@
           <a class="dropdown-item" href="additem.php">Add Product</a>
         </div>
       </li>
-        <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="adminuser.php">View Admin</a>
           <a class="dropdown-item" href="addadmin.php">Add Admin</a>
-            <a class="dropdown-item" href="logoutadmin.php">Logout</a>
+          <a class="dropdown-item" href="logoutadmin.php">Logout</a>
         </div>
       </li>
     </ul>
