@@ -12,6 +12,7 @@ $hostname="http://localhost/kohiso-web2/";
     $harga = $data["harga"];
     $img_type = $imageType;
 
+    // Convert to base64
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
@@ -28,6 +29,8 @@ $hostname="http://localhost/kohiso-web2/";
 
     mysqli_query($conn,$query);
     $affected_rows = mysqli_affected_rows($conn);
+
+    return mysqli_affected_rows($conn);
 
     $insert_id = mysqli_insert_id($conn);
     $target_dir = "asset/img/prd-img/";
@@ -76,7 +79,7 @@ $hostname="http://localhost/kohiso-web2/";
 
     $img_type = $imageType;
 
-    // Convert to base64 
+    // Convert to base64
     $image_base64 = base64_encode(file_get_contents($imageUploaded));
     $image = 'data:image/'.$img_type.';base64,'.$image_base64;
 
@@ -248,5 +251,41 @@ $hostname="http://localhost/kohiso-web2/";
   function show_img($id){
       $target_dir = "asset/img/prd-img/";
       return $target_dir . $id;
+  }
+
+
+  function editUser($data){
+    global $conn;
+    $id = $data["id"];
+    $firstName = $data["FirstName"];
+    $lastName = $data["LastName"];
+    $phoneNum = $data["PhoneNum"];
+    $gender = $data["Gender"];
+    $username = $data["Username"];
+    $address = $data["Address"];
+    $password = $data["Password"];
+
+    $query = "UPDATE account SET
+      id = '$id',
+      FirstName ='$firstName' ,
+      LastName ='$lastName' ,
+      PhoneNum = '$phoneNum',
+      Gender = '$gender' ,
+      Username ='$username' ,
+      Address ='$address' ,
+      password = '$password'
+      WHERE id = $id";
+
+      mysqli_query($conn,$query);
+      return mysqli_affected_rows($conn);
+
+
+  }
+
+  function deleteAccount($data){
+    global $conn ;
+    $id = $data["id"];
+    mysqli_query($conn,"DELETE FROM account WHERE id = '$id'");
+    return mysqli_affected_rows($conn);
   }
  ?>
