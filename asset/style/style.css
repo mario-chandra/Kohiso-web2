@@ -58,6 +58,10 @@ body {
     color: var(--light)
 }
 
+a.nav-link:hover{
+    color: var(--cream2)
+}
+
 img {
     width: 100%;
 }
