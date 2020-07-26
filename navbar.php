@@ -32,7 +32,7 @@
                             <a class="nav-link color-light" href="cart.php">CART</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-light" href="register">JOIN NOW</a>
+                            <a class="nav-link color-light" href="signup.php">JOIN NOW</a>
                         </li>
                     </ul>
                 </div>

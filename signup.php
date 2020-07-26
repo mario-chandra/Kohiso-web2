@@ -20,46 +20,15 @@
             <?php include "navbar.php" ?>
 
             <div class="head-title">
-                <h1>EGIFT CARDS</h1>
+                <h1>SIGN UP</h1>
             </div>
 
         </div>
     </div>
 
     <div class="egift-container">
-        <div class="egift-pat">
 
-        </div>
-
-        <div class="container egift">
-            <h1 class="text-center">Give The Perfect Gift</h1>
-            <h3 class="text-center mb-3">Send gift instantly and choose amount</h3>
-            <div id="carouselExampleSlidesOnly mb-5" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="asset/img/about%20(1).png" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="asset/img/about%20(2).png" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="asset/img/about%20(3).png" alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+        <div class="container">
 
             <form class="egift" method="post">
             	<div class="row">
@@ -83,11 +52,11 @@
 	                		</div>
 	                		<div class="col">
 	                			<label>GENDER</label>
-	                   			<select class="form-control" name="gender">
-          								    <option>Male</option>
-          								    <option>Female</option>
-          								    <option>Custom</option>
-          								</select>
+	                   			<select class="form-control" style="background-color: var(--light)" name="gender" required="">
+  								    <option>Male</option>
+  								    <option>Female</option>
+  								    <option>Custom</option>
+  								</select>
 	                		</div>
 	                	</div>
 	                	<br>
@@ -114,7 +83,7 @@
 	                <div class="col-3"> </div>
             	</div>
             	<br>
-                <div class="w-100 text-center"><button class="btn kohiso-btn egi-btn" type="submit" name="submit">SIGN UP</button></div>
+                <div class="w-100 text-center"><button class="btn kohiso-btn egi-btn w-25" type="submit" name="submit">SIGN UP</button></div>
             </form>
             <?php
             if(isset($_POST["submit"])){
