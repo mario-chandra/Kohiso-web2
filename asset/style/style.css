@@ -439,6 +439,5 @@ textarea {
 
 .cart-container{
   background-color: white;
-  padding: 10%;
-  padding-top: 5%;
+  padding: 0 0 30px 30px;
 }

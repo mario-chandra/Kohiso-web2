@@ -57,9 +57,9 @@ $hostname="http://localhost/kohiso-web2/";
  }
 
  function deleteItemCart($data){
-   global $conn ;
-   mysqli_query($conn,"DELETE FROM cart WHERE id = '$data'");
-   return mysqli_affected_rows($conn);
+    global $conn ;
+    mysqli_query($conn,"DELETE FROM cart WHERE id = '$data'");
+    return mysqli_affected_rows($conn);
  }
 
   function updateData($data, $imageUploaded, $imageType){

@@ -27,7 +27,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel='stylesheet' type="text/css" href="asset/style/style.css">
 </head>
-   <body style="background-color: white; color: var(--purple); padding: 35%; padding-top: 10%; padding-bottom: 0">
+   <body style="background-color: white; color: var(--purple); padding: 35%; padding-top: 40px; padding-bottom: 0">
       <div class="text-center rounded shadow p-3">
        <h5 class="pb-2">Edit User</h5><br>
        <form class="px-3" method="post">
@@ -61,7 +61,7 @@
             <input type="password" name="Password" id="Password" value="<?php echo $Password;?>" required>
           </div>
           <br>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">cancel</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./useraccount.php'">cancel</button>
           <button type="submit" class="btn btn-outline-dark rounded-pill mx-2"  name="submit">submit</button>
         </form>
       </div>
@@ -75,16 +75,16 @@
   <?php
 
         if (isset($_POST["submit"])) {
-          if(editUser($_POST)> 0 ){
+          if(editUser($_POST)> -1){
             echo "<script>
                 alert('berhasil');
                 document.location.href = 'useraccount.php';
                 </script>";
-              }
+          }
           else{
             echo "<script>
                 alert('gagal');
-                document.location.href = 'useraccount.php';
+                document.location.href = 'editUser.php';
                 </script>";
         }
       }
