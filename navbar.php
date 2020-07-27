@@ -29,7 +29,7 @@
                           </li>
                         <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link color-light" href="cart.php">CART</a>
+                            <a class="nav-link color-light" href="account.php">MY ACCOUNT</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link color-light" href="signup.php">JOIN NOW</a>
