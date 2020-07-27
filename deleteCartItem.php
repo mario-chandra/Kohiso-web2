@@ -10,5 +10,12 @@ if(deleteItemCart($name) > 0 ){
     </script>
   ";
 }
+else{
+  echo "
+    <script>
+    document,location.href = 'cart.php';
+    </script>
+  ";
+}
 
  ?>

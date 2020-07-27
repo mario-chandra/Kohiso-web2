@@ -52,7 +52,7 @@
               <th scope="row"><?= $i; ?></th>
               <td>
                 <button class="btn btn-sm btn-outline-dark w-25 mr-2" onclick="window.location.href='gantiadmin.php?id=<?= $item['id'] ?>'">Edit</button>
-                <button class="btn btn-sm btn-outline-dark w-25" onclick="window.location.href='hapusadmin.php?id=<?= $item['id'] ?>'">Delete</button>
+                <a class="btn btn-sm btn-outline-dark w-25" onclick="javascript: return confirm('Menghapus ?');" href="hapusadmin.php?id=<?= $item['id'] ?>">Delete</a>
 
               </td>
               <?= "<td>".$item['id']."</td>" ?>

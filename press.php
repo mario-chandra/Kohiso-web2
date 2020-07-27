@@ -30,10 +30,10 @@
         <div class="row" style="width: 50%;margin: auto">
 
             <div class="col-6 tab">
-                <a href="us.html" class="mr-5 nav-link active">ABOUT US</a>
+                <a href="us.php" class="mr-5 nav-link active">ABOUT US</a>
             </div>
             <div class="col-6 tab">
-                <a href="press.html" class="mr-5 nav-link">PRESS</a>
+                <a href="press.php" class="mr-5 nav-link">PRESS</a>
             </div>
 
         </div>

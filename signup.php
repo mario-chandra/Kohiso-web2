@@ -89,9 +89,9 @@
             if(isset($_POST["submit"])){
               if ($_POST["password"] == $_POST["cpassword"]) {
                 if (addAccount($_POST)>0) {
-                  echo "berhasil";
+                  echo "<script> alert('Selamat bergabung! Silahkan sign in') </script>";
                 }else {
-                  echo "gagal";
+                  echo "<script> alert('Sign Up GAGAL, apakah anda sudah memiliki akun dengan username yang sama ?') </script>";
                 }
               }else {
                 echo "password tidak sesuai";

@@ -37,6 +37,24 @@ body {
     background: #1A181B;
 }
 
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.account-btn {
+    padding: 20px;
+    display: block;
+    padding: .5rem 1rem;
+}
+.account-btn.active {
+    background-color: var(--purple);
+    color: var(--light);
+}
+
 .kohiso-btn {
     border-radius: 58px;
     background-color: var(--light);
@@ -439,6 +457,5 @@ textarea {
 
 .cart-container{
   background-color: white;
-  padding: 10%;
-  padding-top: 5%;
+  padding: 0 0 30px 30px;
 }

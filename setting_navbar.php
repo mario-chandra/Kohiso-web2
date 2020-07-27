@@ -10,6 +10,7 @@
           User
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="useraccount.php">View User</a>
           <a class="dropdown-item" href="checkout.php">View Transaction</a>
         </div>
       </li>

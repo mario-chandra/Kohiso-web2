@@ -24,7 +24,7 @@
     <link rel='stylesheet' type="text/css" href="asset/style/style.css">
 </head>
 
-<body>
+<body style="background-color: white">
     <div class="head-container" style="height: 60%">
         <div class="container-img">
             <img src="asset/img/cart.png">
@@ -34,67 +34,82 @@
 
 
             <div class="head-title fade-in-section" style="margin-top: 1rem">
-                <h1>Cart</h1>
+                <h1>Account</h1>
             </div>
 
         </div>
     </div>
 
-
-	<div class="cart-container row m-0" style="color: black">
-		<div class="col-8">
-          <?php $cartCount = 0; ?>
-
-
-
-          <?php foreach ($items as $item): ?>
-
-            <div class="row pb-3 m-0 border-bottom">
-      			<div class="col-3 p-0">
-      				<img src="asset/img/prd-img.png" class="w-100">
-      			</div>
-    			<div class="col-9" style="padding: 0; padding-left: 2rem">
-          			<h3><?= $item["nama"] ?></h3>
-          			<p>Price: <?= $item["harga"] ?></p>
-                <a onclick="javascript: return confirm('Menghapus ?');" href="deleteCartItem.php?id=<?= $item['id'] ?>"><img src="asset/img/trash.png" style="width: 5%; position: absolute; bottom: 1rem; right: 1rem"></a>
-    			</div>
-            </div>
-              <?php
-
-                $namaBarang = $item["nama"];
-                $hargastr = $item["harga"];
-                $hargaint = (int)$hargastr;
-                $totalHarga = $totalHarga + $hargaint;
-                $arrCart[$cartCount] =  array(
-                  "username" => $username,
-                  "itemName" => $namaBarang,
-                  "itemPrice" => $hargaint
-                );
-              $cartCount++;
-              ?>
-          <?php endforeach; ?>
-
-          <?php if ($items == null): ?>
-            <h1>Keranjang kamu kosong ayo belanja</h1>
-          <?php endif; ?>
+  <div class="row">
+    <div class="col-2 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+    </div>
+    <div class="col-10 tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="cart-container row m-0" style="color: black">
+          <div class="col-8">
+              <?php $cartCount = 0; ?>
 
 
 
+              <?php foreach ($items as $item): ?>
 
-		</div>
-        <div class="col-4 p-3 px-4">
-            <div class="border rounded shadow-sm" style="padding: 2rem">
-                <h5><strong>Order Summar</strong></h5>
-                <div class="d-flex justify-content-between border-bottom pb-2">
-                    <div>Sub Total</div>
-                    <div><strong>Rp. <?= $totalHarga ?></strong></div>
+                <div class="row pb-3 m-0 border-bottom">
+                <div class="col-3 p-0">
+                  <img src="asset/img/prd-img.png" class="w-100">
                 </div>
-                <form class=""  method="post">
-                  <button type="submit" class="btn btn-danger w-100 mt-2" name="checkout">CHECK OUT</button>
-                </form>
-            </div>
+              <div class="col-9" style="padding: 0; padding-left: 2rem">
+                    <h3><?= $item["nama"] ?></h3>
+                    <p>Price: <?= $item["harga"] ?></p>
+                    <a onclick="javascript: return confirm('Menghapus ?');" href="deleteCartItem.php?id=<?= $item['id'] ?>"><img src="asset/img/trash.png" style="width: 5%; position: absolute; bottom: 1rem; right: 1rem"></a>
+              </div>
+                </div>
+                  <?php
+
+                    $namaBarang = $item["nama"];
+                    $hargastr = $item["harga"];
+                    $hargaint = (int)$hargastr;
+                    $totalHarga = $totalHarga + $hargaint;
+                    $arrCart[$cartCount] =  array(
+                      "username" => $username,
+                      "itemName" => $namaBarang,
+                      "itemPrice" => $hargaint
+                    );
+                  $cartCount++;
+                  ?>
+              <?php endforeach; ?>
+
+              <?php if ($items == null): ?>
+                <h1>Keranjang kamu kosong ayo belanja</h1>
+              <?php endif; ?>
+
+
+          </div>
+              <div class="col-4 p-3 px-4">
+                  <div class="border rounded shadow-sm" style="padding: 2rem">
+                      <h5><strong>Order Summar</strong></h5>
+                      <div class="d-flex justify-content-between border-bottom pb-2">
+                          <div>Sub Total</div>
+                          <div><strong>Rp. <?= $totalHarga ?></strong></div>
+                      </div>
+                      <form class=""  method="post">
+                        <button type="submit" class="btn btn-danger w-100 mt-2" name="checkout">CHECK OUT</button>
+                      </form>
+                  </div>
+              </div>
         </div>
-	</div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+    </div>
+  </div>
+  
+
+	
 
 
 
