@@ -65,6 +65,7 @@
 	                    <br>
 	                    <label for="password">PASSWORD</label>
 	                    <input type="password" class="form-control" name="password" required>
+                     <i><p>Don't have an account? <a href="signup.php">sign up</a> </p></i>
 	                </div>
 	                <div class="col-3"> </div>
             	</div>

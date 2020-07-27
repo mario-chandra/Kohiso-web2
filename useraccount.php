@@ -35,18 +35,19 @@
         ?>
         <div id="page-wrapper">
            <div class="container">
-      <h3 class="py-3" style="color: var(--purple)">Daftar User</h3>
+      <h3 class="py-3" style="color: var(--purple)">Daftar admin</h3>
       <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">Pengaturan</th>
-            <th scope="col">ID</th>
-            <th scope="col">Nama</th>
-            <th scope="col">No Telp</th>
+            <th scope="col">action</th>
+            <th scope="col">id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
             <th scope="col">Gender</th>
             <th scope="col">Username</th>
-            <th scope="col">Address</th>
+            <th scope="col">address</th>
           </tr>
         </thead>
         <tbody>
@@ -54,15 +55,16 @@
             <tr>
               <th scope="row"><?= $i; ?></th>
               <td>
-                <button class="btn btn-sm btn-outline-dark mr-2 mb-2 w-75" onclick="window.location.href='editUser.php?id=<?= $item['id'] ?>'">Edit</button>
-                <form class=""  method="post" onsubmit="return confirm('Menghapus ?');">
+                <button class="btn btn-sm btn-outline-dark mr-2" onclick="window.location.href='editUser.php?id=<?= $item['id'] ?>'">Edit</button>
+                <form class=""  method="post">
                   <input type="hidden" name="id" value="<?= $item["id"]  ?>">
-                  <button type="submit" class="btn btn-sm btn-outline-dark w-75" name="delete">Delete</button>
+                  <button type="submit" class="btn btn-sm btn-outline-dark " name="delete">Delete</button>
                 </form>
 
               </td>
               <?= "<td>".$item["id"]."</td>" ?>
-              <?= "<td>".$item["FirstName"]. " " .$item["LastName"]. "</td>" ?>
+              <?= "<td>".$item["FirstName"]."</td>" ?>
+              <?= "<td>".$item["LastName"]."</td>" ?>
               <?= "<td>".$item["PhoneNum"]."</td>" ?>
               <?= "<td>".$item["Gender"]."</td>" ?>
               <?= "<td>".$item["Username"]."</td>" ?>
