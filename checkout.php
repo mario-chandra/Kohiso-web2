@@ -35,12 +35,12 @@
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">ID</th>
+                    <th scope="col">ID Transaction</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Nama Barang</th>
-                    <th scope="col">Harga</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Opsi</th>
+                    <th scope="col">Option</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -60,9 +60,9 @@
                         <input type="hidden" name="harga" value="<?= $result["harga"]  ?>">
                         <input type="hidden" name="status" value="<?= $result["status"]  ?>">
                         <?php $delete = false; ?>
-                        <button class="btn btn-sm btn-outline-dark mr-2" type="submit" name="kirim">kirim</button>
-                        <button class="btn btn-sm btn-outline-dark mr-2" type="submit" name="batal">batal</button>
-                        <button class="btn btn-sm btn-outline-dark mr-2" type="submit" name="hapus">hapus</button>
+                        <button class="btn btn-sm btn-outline-dark mr-2" type="submit" name="kirim">Send</button>
+                        <button class="btn btn-sm btn-outline-dark mr-2" type="submit" name="batal">Cancel</button>
+                        <button class="btn btn-sm btn-outline-dark mr-2" type="submit" name="hapus">Erase</button>
                       </form>
                       </td>
                     </tr>
@@ -71,6 +71,7 @@
               </table>
             </div>
           </div>
+           </div>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
        <?php
@@ -78,7 +79,7 @@
             if (hapusCheckout($result["id"]) > 0) {
               echo "
               <script>
-                alert ('berhasil')
+                alert ('Sucess to erase transaction')
                 document,location.href = 'checkout.php';
                 document location.href = 'checkout.php';
               </script>
@@ -86,7 +87,7 @@
             }else {
               echo "
                 <script>
-                  alert('gagal')
+                  alert('Fail to erase')
                 </script>
               ";
             }
@@ -97,7 +98,7 @@
           if (kirim($_GET)>0) {
             echo "
             <script>
-              alert ('berhasil')
+              alert ('Transaction status has been changed to send')
               document,location.href = 'checkout.php';
               document.location.href = 'checkout.php';
             </script>
@@ -105,7 +106,7 @@
           }else {
             echo "
               <script>
-                alert('berhasil')
+                alert('Transaction status has been changed to send')
                 document,location.href = 'checkout.php';
               </script>
             ";
@@ -116,7 +117,7 @@
           if (batal($_GET)>0) {
             echo "
             <script>
-              alert ('berhasil')
+              alert ('Transaction status has been changed to cancel')
               document,location.href = 'checkout.php';
               document.location.href = 'checkout.php';
             </script>
@@ -124,7 +125,7 @@
           }else {
             echo "
               <script>
-                alert('berhasil')
+                alert('Transaction status has been changed to cancel')
                 document,location.href = 'checkout.php';
                 document.location.href = 'checkout.php';
               </script>

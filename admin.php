@@ -15,13 +15,13 @@ if(isset($_SESSION["data_admin"]))
     $er_email="<div class='alert alert-warning alert-dismissible' role='alert'>
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span></button>
-    <strong>Username Kosong !</strong> <br> Username wajib diisi</div>";
+    <strong>Username Empty !</strong> <br> Username is required</div>";
     }
     elseif($pass == ""){
     $er_pass="<div class='alert alert-warning alert-dismissible' role='alert'>
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span></button>
-    <strong>Password Kosong !</strong> <br> Password Wajib diisi</div>";
+    <strong>Password Empty !</strong> <br> Password is required</div>";
     }
     else{
     $sql_cek=mysqli_query($conn, "SELECT * FROM admin where username='$user' and password='$pass'");
@@ -30,11 +30,11 @@ if(isset($_SESSION["data_admin"]))
     $er_email="<div class='alert alert-danger alert-dismissible' role='alert'>
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
-    </button><strong>Login Gagal !</strong> <br>Username dan Password tidak valid</div>";
+    </button><strong>Login Failed !</strong> <br>Username dan Password not valid</div>";
     }
     else{
     $_SESSION['data_admin']=$user;
-    echo "<script>alert('Selamat Datang di Halaman Admin !');document.location='adminhome.php'</script>";
+    echo "<script>alert('Welcome to Kohiso Web Admin Page !');document.location='adminhome.php'</script>";
 
      }
    }

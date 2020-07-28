@@ -39,7 +39,7 @@
     <div class="container-us">
         <div class="row m-0">
             <div class="col-6 us-img">
-                <img src="asset/img/about%20(3).png">
+                <img src="asset/img/about4.png">
             </div>
             <div class="col-6 us-main">
                 <h1 class="us-main">OUR SHOPS</h1>
@@ -53,13 +53,13 @@
                 <p class="us-main">Our coffee master, Yusli Anto, only selects the top 1% of Arabica beans from the world’s best growing regions.</p>
             </div>
             <div class="col-6 us-img">
-                <img src="asset/img/about%20(4).png">
+                <img src="asset/img/about3.png">
             </div>
         </div>
 
         <div class="row m-0">
             <div class="col-6 us-img">
-                <img src="asset/img/about%20(1).png">
+                <img src="asset/img/about1.png">
             </div>
             <div class="col-6 us-main">
                 <h1 class="us-main">TEA SOURCING</h1>
@@ -73,7 +73,7 @@
                 <p class="us-main">KOHISO is program that every cup purchased about 10% will be funding to help children in the world. </p>
             </div>
             <div class="col-6 us-img">
-                <img src="asset/img/about%20(2).png">
+                <img src="asset/img/about2.png">
             </div>
         </div>
     </div>

@@ -5,15 +5,15 @@ $name = $_GET["id"];
 if(deleteItemCart($name) > 0 ){
   echo "
     <script>
-    alert('data berhasil dihapus');
-    document,location.href = 'cart.php';
+    alert('Cart Item are succesfully being erased');
+    document,location.href = 'account.php';
     </script>
   ";
 }
 else{
   echo "
     <script>
-    document,location.href = 'cart.php';
+    document,location.href = 'account.php';
     </script>
   ";
 }

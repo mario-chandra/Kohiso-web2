@@ -19,8 +19,8 @@
             <?php include "navbar.php" ?>
 
             <div class="head-title fade-in-section" style="margin-top: 3rem">
-                <p>it's</p>
-                <h1>Coffee Time</h1>
+                <p>It's</p>
+                <h1>Drink Time</h1>
             </div>
 
         </div>
@@ -66,7 +66,7 @@
         </div>
         <div class='container-main us fade-in-section'>
             <h1 class="us">RICH RARE RESERVE</h1>
-            <p class="us">Our reserve coffees represent the most exclusiveand rich Indonesia coffee regions in the world.</p>
+            <p class="us">Our reserve coffees represent the most exclusive and rich Indonesia coffee & tea regions in the world.</p>
             <a href="us.php" class="btn kohiso-btn mt-3 us px-3">Learn More</a>
         </div>
     </div>

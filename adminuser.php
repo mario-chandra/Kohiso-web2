@@ -35,14 +35,14 @@
         ?>
         <div id="page-wrapper">
            <div class="container">
-      <h3 class="py-3" style="color: var(--purple)">Daftar admin</h3>
+      <h3 class="py-3" style="color: var(--purple)">Admin List</h3>
       <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">Pengaturan</th>
-            <th scope="col">ID</th>
-            <th scope="col">Nama</th>
+            <th scope="col">Settings</th>
+            <th scope="col">Admin ID</th>
+            <th scope="col">Name</th>
             <th scope="col">Password</th>
           </tr>
         </thead>

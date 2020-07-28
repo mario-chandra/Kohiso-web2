@@ -20,7 +20,7 @@
     if ($result>0) {
       echo "
         <script>
-        alert('ditambahkan ke cart');
+        alert('Product succesfully added to cart');
         document.location.href = 'shop.php';
         </script>
       ";
@@ -28,7 +28,7 @@
     else {
       echo "
         <script>
-        alert('gagal');
+        alert('Fail to add to cart');
         document.location.href = 'shop.php';
         </script>
       ";

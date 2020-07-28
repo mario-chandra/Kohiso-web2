@@ -70,7 +70,7 @@
                     <th scope="row"><?= $i; ?></th>
                     <td>
                       <button class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="document.location.href='gantiitem.php?id=<?= $item['id'] ?>'">Edit</button>
-                      <a class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="javascript: return confirm('Menghapus ?');" href="hapusitem.php?id=<?= $item['id'] ?>"">Delete</a>
+                      <a class="btn btn-sm btn-outline-dark mr-2" style="width: 40%" onclick="javascript: return confirm('Menghapus ?');" href="hapusitem.php?id=<?= $item['id'] ?>">Delete</a>
                     </td>
                     <td><?= $item['id'] ?></td>
                     <td><?= $item['name'] ?></td>
@@ -84,6 +84,7 @@
               </table>
             </div>
           </div>
+       </div>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
   </body>
 </html>

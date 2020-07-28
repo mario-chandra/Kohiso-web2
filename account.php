@@ -59,7 +59,7 @@
             <h4 class="w-100 rounded border px-3 py-1 m-0"><?= $user["FirstName"] . " " . $user["LastName"] ?></h4>
           </div>
           <div  class="col-4 mb-3 py-1">
-            <h5>Phone Num</h5>
+            <h5>Phone Number</h5>
           </div>
           <div class="col-5">
             <h4 class="w-100 rounded border px-3 py-1 m-0"><?= $user["PhoneNum"] ?></h4>
@@ -82,8 +82,6 @@
         <div class="cart-container row m-0" style="color: black">
           <div class="col-8">
               <?php $cartCount = 0; ?>
-
-
 
               <?php foreach ($items as $item): ?>
 
@@ -117,9 +115,9 @@
           </div>
               <div class="col-4 p-3 px-4">
                   <div class="border rounded shadow-sm" style="padding: 2rem">
-                      <h5><strong>Order Summar</strong></h5>
+                      <h5><strong>Order Summary</strong></h5>
                       <div class="d-flex justify-content-between border-bottom pb-2">
-                          <div>Sub Total</div>
+                          <div>Total Price</div>
                           <div><strong>Rp. <?= $totalHarga ?></strong></div>
                       </div>
                       <form class=""  method="post">
@@ -155,7 +153,7 @@
       <?php if (isset($_POST["checkout"])): ?>
         <?php if ($items == null): ?>
             <script>
-              alert("keranjang kamu kosong")
+              alert("Your cart is empty")
               document,location.href = 'shop.php';
             </script>
           <?php else: ?>
@@ -163,7 +161,7 @@
               <?php if (checkout($value) > 0): ?>
                 <?php clearCart($username); ?>
                 <script>
-                  alert('terima kasih ');
+                  alert('Thankyou');
                   document,location.href = 'shop.php';
                   document.location.href = 'shop.php';
                 </script>

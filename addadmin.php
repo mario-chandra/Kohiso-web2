@@ -24,20 +24,20 @@
           if (addAdmin($_POST)>0):
             echo "
             <script>
-            alert('Admin berhasil ditambahkan');
+            alert('Admin succesfully added');
             document,location.href = 'adminuser.php';
             </script>";
           else:
             echo "
             <script>
-            alert('Gagal');
+            alert('Failed');
             </script>";
           endif;
         else:
           $username = $_POST['username'];
           $password = $_POST['password'];
           $cpassword = $_POST['cpassword'];
-          $errpass = "*password tidak sesuai";
+          $errpass = "*Password not same";
         endif;
        endif; 
     ?>
@@ -59,8 +59,8 @@
           </div>
           <span class="text-danger" style="font-size: 15px"><?php echo $errpass;?></span><br>
           <br>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">cancel</button>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">submit</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">Cancel</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">Submit</button>
         </form>
       </div>
 
