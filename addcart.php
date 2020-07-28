@@ -11,7 +11,7 @@
   }else {
     $query = "INSERT INTO cart
     VALUES(
-      '', '$username' , '$nama' , '$harga'
+      DEFAULT, '$username' , '$nama' , '$harga'
     )";
 
     mysqli_query($conn,$query);
@@ -21,7 +21,7 @@
       echo "
         <script>
         alert('ditambahkan ke cart');
-        document,location.href = 'shop.php';
+        document.location.href = 'shop.php';
         </script>
       ";
     }
@@ -29,16 +29,9 @@
       echo "
         <script>
         alert('gagal');
-        document,location.href = 'shop.php';
+        document.location.href = 'shop.php';
         </script>
       ";
     }
   }
-
-
-
-
-
-
-
  ?>
