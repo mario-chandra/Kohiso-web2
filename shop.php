@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require 'functions.php';
 $items = fetchData("SELECT * FROM item");

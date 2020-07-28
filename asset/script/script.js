@@ -7,34 +7,6 @@ $(`.col-6.p-0`).hover(
     }
 )
 
-var url = 'http://the19am.com/uph/json/?p=coffeeshop'
-async function getData() {
-    $.get(url).then(res => {
-        res.forEach(function (item) {
-            $('#product').append(`
-            
-            `)
-        })
-        $('#product-promo').append(`
-            <div class="product card mx-3 my-3">
-                <img src='asset/img/product.png' class='product-img' height="100%">
-                <div class="product-detail">
-                    <h3>${res[1].nama_produk}</h3>
-                    <small>${res[1].short_desc}<small><br>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <i class="fa fa-star ml-2"></i>
-                    <p class="mt-2 product-promo">Rp. ${res[1].price}</p>
-                    <p class="mt-2">Rp. ${res[1].price-(res[1].price*0.1)}</p>
-                </div>
-            </div>
-            `)
-    })
-}
-getData();
-
 $('div.press-main').hover(function () {
     $(this).children('h1').css('display','none')
     $(this).children('div').css('display','block')

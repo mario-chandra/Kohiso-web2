@@ -14,7 +14,7 @@
                             <a class="nav-link" href=shop.php>SHOP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="press.php">PRESS</a>
+                            <a class="nav-link" href="press.php">ABOUT US / PRESS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gift.php">EGIFT CARDS</a>
