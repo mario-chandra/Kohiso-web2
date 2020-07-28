@@ -8,7 +8,7 @@ $name = $_GET["id"];
 if(deleteAdmin($name) > 0 ){
   echo "
     <script>
-    alert('data berhasil dihapus');
+    alert('Admin are succesfully being erased');
     document,location.href = 'adminuser.php';
     </script>
   ";

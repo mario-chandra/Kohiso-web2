@@ -34,7 +34,7 @@
             	<div class="row">
             		<div class="col-3"> </div>
 	                <div class="col-6">
-	                	<div class="row">
+	                	<div class="row mt-5">
 	                		<div class="col">
 	                			<label>FIRST NAME</label>
 	                    		<input class="form-control" name="firstName" required>
@@ -89,12 +89,12 @@
             if(isset($_POST["submit"])){
               if ($_POST["password"] == $_POST["cpassword"]) {
                 if (addAccount($_POST)>0) {
-                  echo "<script> alert('Selamat bergabung! Silahkan sign in') </script>";
+                  echo "<script> alert('Welcome to Kohiso Family ! Please login to enjoy our service') </script>";
                 }else {
-                  echo "<script> alert('Sign Up GAGAL, apakah anda sudah memiliki akun dengan username yang sama ?') </script>";
+                  echo "<script> alert('Sign Up Failed, are you aleardy register your username in Kohiso ? ') </script>";
                 }
               }else {
-                echo "password tidak sesuai";
+                echo "Password not same";
               }
             }
 

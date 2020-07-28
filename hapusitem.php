@@ -9,7 +9,7 @@
   if(deleteData($name) > 0 ){
     echo "
       <script>
-      alert('data berhasil dihapus');
+      alert('Item are succesfully being erased');
       document,location.href = 'tampilan.php';
       </script>
     ";

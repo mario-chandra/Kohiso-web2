@@ -35,8 +35,8 @@
             <label for="deskripsi">Password</label>
             <input type="password" name="password" id="password" value="<?php echo $item['password'];?>" required>   
           </div><br>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">cancel</button>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">submit</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./adminuser.php'">Cancel</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">Submit</button>
         </form>
       </div>
 
@@ -44,12 +44,12 @@
      if($_SERVER["REQUEST_METHOD"] == "POST"):
         if(editAdmin($_POST)>-1):
           echo "<script>
-              alert('berhasil');
+              alert('Admin detail are succesfull being edited');
               document.location.href = 'adminuser.php';
               </script>";
         else:
           echo "<script>
-              alert('gagal');
+              alert('Failed to edit admin detail');
               </script>";
         endif;
      endif;

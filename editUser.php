@@ -33,11 +33,11 @@
        <form class="px-3" method="post">
           <input type="hidden" name="id" value="<?= $item["id"] ?>">
           <div class="d-flex justify-content-between pb-3">
-            <label for="FirstName">FirstName</label>
+            <label for="FirstName">First Name</label>
             <input type="text" name="FirstName" id="FirstName" value="<?php echo $FirstName;?>" required>
           </div>
           <div class="d-flex justify-content-between pb-3">
-            <label for="LastName">LastName</label>
+            <label for="LastName">Last Name</label>
             <input type="text" name="LastName" id="LastName" value="<?php echo $LastName;?>" required>
           </div>
           <div class="d-flex justify-content-between pb-3">
@@ -61,8 +61,8 @@
             <input type="password" name="Password" id="Password" value="<?php echo $Password;?>" required>
           </div>
           <br>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./useraccount.php'">cancel</button>
-          <button type="submit" class="btn btn-outline-dark rounded-pill mx-2"  name="submit">submit</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./useraccount.php'">Cancel</button>
+          <button type="submit" class="btn btn-outline-dark rounded-pill mx-2"  name="submit">Submit</button>
         </form>
       </div>
 
@@ -77,13 +77,13 @@
         if (isset($_POST["submit"])) {
           if(editUser($_POST)> -1){
             echo "<script>
-                alert('berhasil');
+                alert('User detail are succes being edited');
                 document.location.href = 'useraccount.php';
                 </script>";
           }
           else{
             echo "<script>
-                alert('gagal');
+                alert('Failed to edit user detail');
                 document.location.href = 'editUser.php';
                 </script>";
         }

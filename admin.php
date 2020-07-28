@@ -67,7 +67,7 @@ if(isset($_SESSION["data_admin"]))
            <div class="row"><!-- start row -->
                 <div class="col-lg-12"><!-- start col lg 12-->
                     <div class="login rounded"><!-- start class login -->
-                      <h3>LOGIN ADMIN WEB KOHISO</h3>
+                      <h3 class="mb-4">LOGIN ADMIN KOHISO</h3>
                       <!-- start form login -->
                       <form action="" method="post">
                         <div class="form-group row"><!--start form-group-->

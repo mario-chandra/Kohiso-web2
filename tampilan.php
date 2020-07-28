@@ -49,18 +49,18 @@
         ?>
         <div id="page-wrapper">
            <div class="container">
-              <h1 class="py-3" style="color: var(--purple)">Edit Produk</h1>
+              <h1 class="py-3" style="color: var(--purple)">Edit Product</h1>
 
               <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
                 <thead>
                   <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Pengaturan</th>
-                  <th scope="col">Id</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Harga</th>
-                  <th scope="col">Deskripsi</th>
-                  <th scope="col" style="width: 25%">Gambar</th>
+                  <th scope="col">Setting</th>
+                  <th scope="col">Product ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Description</th>
+                  <th scope="col" style="width: 25%">Product Image</th>
                 </tr>
                 </thead>
                 <tbody>

@@ -73,7 +73,7 @@
             </form>
 
             <?php if (isset($error)): ?>
-              <p style="color:red">username atau password salah</p>
+              <p style="color:red" class="text-center">Your username and password not valid</p>
             <?php endif; ?>
 
         </div>

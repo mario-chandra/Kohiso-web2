@@ -37,19 +37,19 @@
             <input type="text" name="name" id="name" value="<?= $item["name"] ?>" required>
           </div>
           <div class="d-flex justify-content-between pb-3">
-            <label for="deskripsi">Deskripsi</label>
+            <label for="deskripsi">Description</label>
             <input type="text" name="deskripsi" id="deskripsi" value="<?= $item["name"] ?>" required>  
           </div>
           <div class="d-flex justify-content-between pb-3">
-            <label for="harga">Harga</label>
+            <label for="harga">Price</label>
             <input type="number" name="harga" id="harga" value="<?= $item["harga"] ?>" required>  
           </div>
           <div class="row m-0">
-            <div class="col-4 p-0">Select image</div>
+            <div class="col-4 p-0">Select Image</div>
             <input class="col-8 p-0 text-right" type="file" name="fileToUpload" id="fileToUpload" required> 
           </div><br>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">edit item</button>
-          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./tampilan.php'">cancel</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="submit" name="submit">Edit Item</button>
+          <button class="btn btn-outline-dark rounded-pill mx-2" type="button" onclick="window.location.href='./tampilan.php'">Cancel</button>
         </form>
       </div>
 
@@ -93,13 +93,13 @@
         } else {
              if(updateData($_POST, $_FILES['fileToUpload']['tmp_name'], $_FILES['fileToUpload']['type'])>0):
                 echo "<script>
-                    alert('berhasil');
+                    alert('Item detail are succesfully being edited');
                     document.location.href = 'tampilan.php';
                     </script>";
               else :
                 echo "
                 <script>
-                alert('gagal');
+                alert('Fail to edit item detail');
                 </script>";
               endif;
         }

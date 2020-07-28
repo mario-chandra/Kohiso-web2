@@ -35,15 +35,15 @@
         ?>
         <div id="page-wrapper">
            <div class="container">
-      <h3 class="py-3" style="color: var(--purple)">Daftar User</h3>
+      <h3 class="py-3" style="color: var(--purple)">User List</h3>
       <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">Pengaturan</th>
-            <th scope="col">ID</th>
-            <th scope="col">Nama</th>
-            <th scope="col">No Telp</th>
+            <th scope="col">Setting</th>
+            <th scope="col">User ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
             <th scope="col">Gender</th>
             <th scope="col">Username</th>
             <th scope="col">Address</th>
