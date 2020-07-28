@@ -27,7 +27,7 @@
     </div>
 
     <div class="reward-container">
-        <div class="container-img-no-overlay">
+        <div class="container-img">
             <img src="asset/img/reward.png">
         </div>
         <div class='container-main'>
