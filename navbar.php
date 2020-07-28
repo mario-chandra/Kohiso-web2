@@ -1,4 +1,4 @@
- 			<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="/index.html">
                     <img src="asset/img/Logo.png" class="logo">
                 </a>
@@ -27,10 +27,10 @@
                           <li class="nav-item">
                               <a class="nav-link color-light" href="logout.php">LOG OUT</a>
                           </li>
-                        <?php endif; ?>
-                        <li class="nav-item">
+                          <li class="nav-item">
                             <a class="nav-link color-light" href="account.php">MY ACCOUNT</a>
                         </li>
+                        <?php endif; ?>
                         <li class="nav-item">
                             <a class="nav-link color-light" href="signup.php">JOIN NOW</a>
                         </li>
