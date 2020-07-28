@@ -36,8 +36,8 @@
                 <p>Order Ahead and Mobile Pay using KoHiSo app.</p>
 
                 <div class='action'>
-                    <a class="btn kohiso-btn re-btn mr-2" href="cv.html">Curiculum</a>
-                    <a class="btn kohiso-btn re-btn" href="cv.html">Vitae</a>
+                    <a class="btn kohiso-btn re-btn mr-2" href="shop.php">Order Now</a>
+                    <a class="btn kohiso-btn re-btn" href="account.php">Check Reward</a>
                 </div>
             </div>
         </div>
@@ -51,11 +51,11 @@
         <div class="row container-main product">
             <div class='col-6 p-0 product-title' id="img-1">
                 <h2>COFFEE</h2>
-                <a href="/product.html" class="btn btn-see">See More</a>
+                <a href="shop.php" class="btn btn-see">See More</a>
             </div>
             <div class='col-6 p-0 product-title' id="img-2">
                 <h2>TEA</h2>
-                <a href="/product.html" class="btn btn-see">See More</a>
+                <a href="shop.php" class="btn btn-see">See More</a>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
         <div class='container-main us fade-in-section'>
             <h1 class="us">RICH RARE RESERVE</h1>
             <p class="us">Our reserve coffees represent the most exclusiveand rich Indonesia coffee regions in the world.</p>
-            <a href="#" class="btn kohiso-btn mt-3 us px-3">Learn More</a>
+            <a href="us.php" class="btn kohiso-btn mt-3 us px-3">Learn More</a>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
         <div class='container-main us fade-in-section'>
             <h1 class="us">OUR STORY</h1>
             <p class="us">Since 2020 We served people. We’re passionate about delivering the best handcrafted products and take pride in the journey from seed to cup.</p>
-            <a href="#" class="btn kohiso-btn mt-3 us px-3">Learn More</a>
+            <a href="us.php" class="btn kohiso-btn mt-3 us px-3">Learn More</a>
         </div>
     </div>
 
@@ -109,8 +109,6 @@
             <a class="navbar-brand" href="/index.html">
                 <img src="asset/img/Logo.png" class='logo'>
             </a>
-            <br>
-            COPYRIGHT KEVIN FERICCO
         </div>
     </div>
 

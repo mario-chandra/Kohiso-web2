@@ -107,8 +107,6 @@
             <a class="navbar-brand" href="/index.html">
                 <img src="asset/img/Logo.png" class='logo'>
             </a>
-            <br>
-            COPYRIGHT KEVIN FERICCO
         </div>
     </div>
 

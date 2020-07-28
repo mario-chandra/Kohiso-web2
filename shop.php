@@ -1,14 +1,9 @@
 <?php
 
 session_start();
-
-
-
 require 'functions.php';
-
 $items = fetchData("SELECT * FROM item");
-
- ?>
+?>
 
 <html>
 
@@ -58,15 +53,9 @@ $items = fetchData("SELECT * FROM item");
                   </div>
                 </form>
               <?php endforeach; ?>
-
-
-          <?php
-
-           ?>
+            </div>
         </div>
     </div>
-
-
 
     <div class="footer">
         <div class="row footer">
@@ -95,8 +84,6 @@ $items = fetchData("SELECT * FROM item");
             <a class="navbar-brand" href="/index.html">
                 <img src="asset/img/Logo.png" class='logo'>
             </a>
-            <br>
-            COPYRIGHT KEVIN FERICCO
         </div>
     </div>
 
