@@ -23,17 +23,17 @@
                           <li class="nav-item">
                               <a class="nav-link color-light" href="signin.php">SIGN IN</a>
                           </li>
-                        <?php else: ?>
                           <li class="nav-item">
-                              <a class="nav-link color-light" href="logout.php">LOG OUT</a>
-                          </li>
+                            <a class="nav-link color-light" href="signup.php">JOIN NOW</a>
+                        </li>
+                        <?php else: ?>
                           <li class="nav-item">
                             <a class="nav-link color-light" href="account.php">MY ACCOUNT</a>
                         </li>
-                        <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link color-light" href="signup.php">JOIN NOW</a>
-                        </li>
+                              <a class="nav-link color-light" href="logout.php">LOG OUT</a>
+                          </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </nav>
