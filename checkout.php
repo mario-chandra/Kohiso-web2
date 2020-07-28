@@ -22,14 +22,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script type="text/javascript" src="admin.js"></script>
    </head>
-   <body>
+   <body style="background-color:white;">
     <div id="wrapper">
         <?php
         require "setting_navbar.php";
         ?>
         <div id="page-wrapper">
            <div class="container">
-              <h1 class="py-3" style="color: var(--purple)">Edit Produk</h1>
+              <h1 class="py-3" style="color: var(--purple)">View Transaction</h1>
 
               <table class="table rounded shadow-sm table-striped display" style="background-color: white" id="adminTabel">
                 <thead>
@@ -132,8 +132,5 @@
           }
         }
         ?>
-
-       <a href="admin.php">kembali</a>
-
    </body>
  </html>
